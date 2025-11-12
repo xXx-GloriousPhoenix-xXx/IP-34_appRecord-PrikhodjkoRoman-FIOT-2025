@@ -1,0 +1,765 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../css/root.css">
+    <link rel="stylesheet" href="../../css/general.css">
+    <title>Report</title>
+</head>
+<body>
+    <header>
+        <div class="wrapper centered intro">
+            <div class="wrapper centered info">
+                <div class="wrapper centered labname">
+                    <h1>Звіти з лабораторних робіт</h1>        
+                    <h1>з дисципліни «WEB-орієнтовані технології. FrontEnd розробки»</h1>
+                </div>
+                <div class="wrapper centered author">
+                    <p>Виконавець: Студент групи ІП-34 Приходько Роман Юрійович</p>
+                </div>
+            </div>
+            <div class="wrapper centered profile">
+                <img class="profile" src="../../img/pfp.jpg" alt="pfp">
+            </div>
+        </div>
+        <nav id="lablist" class="wrapper centered"></nav>
+    </header>
+    <main>
+        <aside class="wrapper centered">
+            <ul>
+                <li>
+                    <div class="wrapper">
+                        <a href="index-1.html">Тема. Мета. Місце розташування сайту, звіту</a>
+                    </div>
+                </li>
+                <li>
+                    <div class="wrapper active">
+                        <a href="index-2.html">Завдання 1. Зовнішній вигляд макету. Код макету.</a>
+                    </div>
+                </li>
+                <li>
+                    <div class="wrapper">
+                        <a href="index-3.html">Завдання 2</a>
+                    </div>
+                </li>
+                <li>
+                    <div class="wrapper sub">
+                        <a href="index-4.html">Фіксована таблична верстка</a>
+                    </div>
+                </li>
+                <li>
+                    <div class="wrapper sub">
+                        <a href="index-5.html">Гумова таблична верстка</a>
+                    </div>
+                </li>
+                <li>
+                    <div class="wrapper sub">
+                        <a href="index-6.html">Фіксована блокова верстка</a>
+                    </div>
+                </li>
+                <li>
+                    <div class="wrapper sub">
+                        <a href="index-7.html">Гумова блокова верстка</a>
+                    </div>
+                </li>
+                <li>
+                    <div class="wrapper">
+                        <a href="index-8.html">Висновки</a>
+                    </div>
+                </li>
+            </ul>
+        </aside>
+        <section class="wrapper lab-content">
+            <h4>1. Пояснення:</h4>
+            <p>У моїй роботі я застосував гумовий дизайн веб-сайту, що забезпечує його адаптивність до різних розмірів екранів. Для компонування контенту використовувалася технологія CSS Flexbox, яка дозволяє гнучко вирівнювати елементи у контейнерах, автоматично адаптуючи їх до змін умов відображення. Це забезпечує ефективне розміщення контенту на сторінці, зручне для перегляду з будь-якого пристрою. </p>
+            <h4>2. HTML-код застосунку:</h4>
+            <pre>
+&lt;!DOCTYPE html&gt;
+    &lt;html lang="en"&gt;
+        &lt;head&gt;
+            &lt;meta charset="UTF-8"&gt;
+            &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+            &lt;meta name="keywords" content="рослини, кактуси, фікуси, догляд за рослинами, домашні рослини"&gt;
+            &lt;meta name="description" content="Plantify - ваш гід у світі домашніх рослин. Поради для початківців, каталог рослин та корисні статті"&gt;
+            &lt;!-- General Styling --&gt;
+                &lt;link rel="stylesheet" href="../css/normalize/base.css"&gt;
+                &lt;link rel="stylesheet" href="../css/normalize/additional.css"&gt;
+                &lt;link rel="stylesheet" href="../css/root.css"&gt;
+                &lt;link rel="stylesheet" href="../css/general.css"&gt;
+                &lt;!-- Fonts Import --&gt;
+                    &lt;link rel="preconnect" href="https://fonts.googleapis.com"&gt;
+                    &lt;link rel="preconnect" href="https://fonts.gstatic.com" crossorigin&gt;
+                    &lt;link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&amp;display=swap" rel="stylesheet"&gt;
+                    &lt;link href="https://fonts.googleapis.com/css2?family=Varela+Round&amp;display=swap" rel="stylesheet"&gt;
+                    &lt;link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&amp;display=swap" rel="stylesheet"&gt;
+                    &lt;!-- Responsive Syling --&gt;
+                        &lt;link rel="stylesheet" href="../css/responsive/phone.css"&gt;
+                        &lt;link rel="stylesheet" href="../css/responsive/tablet.css"&gt;
+                        &lt;link rel="stylesheet" href="../css/responsive/laptop.css"&gt;
+                        &lt;link rel="stylesheet" href="../css/responsive/pc.css"&gt;
+                        &lt;link rel="shortcut icon" href="../img/icon.png" type="image/x-icon"&gt;
+                        &lt;title&gt;
+                            Plantify
+                        &lt;/title&gt;
+                    &lt;/head&gt;
+                    &lt;body&gt;
+                        &lt;header&gt;
+                            &lt;div id="logo"&gt;
+                                &lt;div class="icon wrapper"&gt;
+                                    &lt;img class="icon" src="../img/icon.png" alt="icon"&gt;
+                                &lt;/div&gt;
+                                &lt;div class="name wrapper"&gt;
+                                    &lt;h1 class="name"&gt;
+                                        Plantify
+                                    &lt;/h1&gt;
+                                &lt;/div&gt;
+                            &lt;/div&gt;
+                            &lt;nav&gt;
+                                &lt;a href="./home.html"&gt;
+                                    Головна
+                                &lt;/a&gt;
+                                &lt;a href="./catalogue.html"&gt;
+                                    Каталог
+                                &lt;/a&gt;
+                                &lt;a href="./advice.html"&gt;
+                                    Поради
+                                &lt;/a&gt;
+                                &lt;a href="./about.html"&gt;
+                                    Про нас
+                                &lt;/a&gt;
+                                &lt;a href="./contact.html"&gt;
+                                    Зворотній зв'язок
+                                &lt;/a&gt;
+                            &lt;/nav&gt;
+                        &lt;/header&gt;
+                        &lt;main&gt;
+                            &lt;section class="hero"&gt;
+                                &lt;div class="wrapper"&gt;
+                                    &lt;div class="content wrapper"&gt;
+                                        &lt;h2 class="content"&gt;
+                                            Як не вбити кактус і полюбити фікус?
+                                        &lt;/h2&gt;
+                                        &lt;p&gt;
+                                            Ваш простий гід у світі домашніх рослин для початківців
+                                        &lt;/p&gt;
+                                        &lt;button class="content"&gt;
+                                            Почати навчання
+                                        &lt;/button&gt;
+                                    &lt;/div&gt;
+                                    &lt;div class="image wrapper group"&gt;
+                                        &lt;div class="image wrapper item"&gt;
+                                            &lt;img src="../img/content/cactus.webp" alt="cactus"&gt;
+                                        &lt;/div&gt;
+                                        &lt;div class="image wrapper item"&gt;
+                                            &lt;img src="../img/content/ficus.jpg" alt="ficus"&gt;
+                                        &lt;/div&gt;
+                                    &lt;/div&gt;
+                                &lt;/div&gt;
+                            &lt;/section&gt;
+                            &lt;section class="top-5"&gt;
+                                &lt;div class="top-5 header"&gt;
+                                    &lt;h2&gt;
+                                        Топ 5 рослин для початківців
+                                    &lt;/h2&gt;
+                                    &lt;h3&gt;
+                                        Сансевієрія
+                                    &lt;/h3&gt;
+                                &lt;/div&gt;
+                                &lt;div class="top-5 block-wrapper main"&gt;
+                                    &lt;div class="text block-wrapper"&gt;
+                                        &lt;p&gt;
+                                            «Тещин язик» – майже невинищна рослина
+                                        &lt;/p&gt;
+                                        &lt;p&gt;
+                                            Сансевієрія – це декоративно-листяна рослина, яка також багатьом відома під назвами тещин язик, щучий хвіст, ліопардова лілія та зміїна шкіра. Культура приваблює квітникарів своїм прямостоячим шкірястим листям з незвичайними малюнками та візерунками. Сансевієрії виглядають ефектніше в групових посадках, через що їх часто саджають в один горщик.
+                                        &lt;/p&gt;
+                                    &lt;/div&gt;
+                                    &lt;div class="image wrapper item"&gt;
+                                        &lt;img src="../img/content/sansevieria.jpg" alt="sansevieria"&gt;
+                                    &lt;/div&gt;
+                                    &lt;div class="text block-wrapper"&gt;
+                                        &lt;p&gt;
+                                            Рослина має не лише декоративну, а й практичну цінність. Сансевієрія чудово очищує повітря в приміщенні, поглинаючи шкідливі речовини, такі як формальдегід і бензол, а натомість виділяє кисень навіть уночі. Саме тому її часто можна побачити не лише вдома, але й у школах, лікарнях та офісах.
+                                        &lt;/p&gt;
+                                        &lt;p&gt;
+                                            Ще одна причина популярності «тещиного язика» — його невибагливість. Це справжня «майже невинищна» рослина, яка витримує як посуху, так і недостатнє освітлення. Її не потрібно часто поливати, а пересаджують сансевієрію лише раз на кілька років. Вона добре росте в невеликих горщиках і поступово утворює густі кущики з безліччю листків.
+                                        &lt;/p&gt;
+                                        &lt;p&gt;
+                                            Культура особливо ефектно виглядає в групових посадках — коли кілька сортів із різним малюнком листя висаджують в один горщик. Така композиція додає приміщенню свіжості, створює відчуття природності та гармонії.
+                                        &lt;/p&gt;
+                                        &lt;p&gt;
+                                            Сансевієрія — справжня класика серед кімнатних рослин: витривала, красива та корисна. Якщо ви шукаєте зеленого «сусіда», який не потребує багато уваги, але прикрасить будь-який інтер’єр, «тещин язик» стане ідеальним вибором.
+                                        &lt;/p&gt;
+                                    &lt;/div&gt;
+                                &lt;/div&gt;
+                            &lt;/section&gt;
+                            &lt;section class="top-5"&gt;
+                                &lt;div class="top-5 header"&gt;
+                                    &lt;h2&gt;
+                                        Топ 5 рослин для початківців
+                                    &lt;/h2&gt;
+                                    &lt;h3&gt;
+                                        Заміокулькас
+                                    &lt;/h3&gt;
+                                &lt;/div&gt;
+                                &lt;div class="top-5 block-wrapper main"&gt;
+                                    &lt;div class="text block-wrapper"&gt;
+                                        &lt;p&gt;
+                                            Не вимагає багато уваги, ідеальний для забудькуватих
+                                        &lt;/p&gt;
+                                        &lt;p&gt;
+                                            Заміокулькас — монотипний рід рослин із родини ароїдних, представлений єдиним видом — заміокулькасом замієлистним. Його батьківщина — посушливі райони Східної Африки, де рослина навчилася виживати в умовах нестачі вологи. Саме тому в кімнатних умовах заміокулькас відомий як «доларовое дерево» або «квітка для ледачих» — йому майже не потрібен догляд.
+                                        &lt;/p&gt;
+                                    &lt;/div&gt;
+                                    &lt;div class="image wrapper item"&gt;
+                                        &lt;img src="../img/content/zamioculcas.jpg" alt="zamioculcas"&gt;
+                                    &lt;/div&gt;
+                                    &lt;div class="text block-wrapper"&gt;
+                                        &lt;p&gt;
+                                            Міцне, блискуче листя рослини зібране в акуратні розетки, що надає заміокулькасу елегантного вигляду. Коренева система складається з потужних бульб, які накопичують воду, тому навіть якщо ви забудете полити його кілька тижнів — нічого страшного не станеться.
+                                        &lt;/p&gt;
+                                        &lt;p&gt;
+                                            Заміокулькас чудово почувається у звичайних кімнатних умовах: він переносить сухе повітря, рідкий полив і нестачу світла. Єдине, чого він не любить — надлишку вологи в ґрунті, тому важливо, щоб горщик мав гарний дренаж.
+                                        &lt;/p&gt;
+                                        &lt;p&gt;
+                                            Рослина часто використовується в сучасних інтер’єрах завдяки своїй лаконічності та вишуканій зелені. Вона гарно виглядає як у мінімалістичних, так і в класичних приміщеннях, надаючи їм свіжості й відчуття гармонії. Заміокулькас — ідеальний вибір для тих, хто хоче мати вдома зелений акцент без турбот.
+                                        &lt;/p&gt;
+                                    &lt;/div&gt;
+                                &lt;/div&gt;
+                            &lt;/section&gt;
+                            &lt;section class="top-5"&gt;
+                                &lt;div class="top-5 header"&gt;
+                                    &lt;h2&gt;
+                                        Топ 5 рослин для початківців
+                                    &lt;/h2&gt;
+                                    &lt;h3&gt;
+                                        Епіпремнум
+                                    &lt;/h3&gt;
+                                &lt;/div&gt;
+                                &lt;div class="top-5 block-wrapper main"&gt;
+                                    &lt;div class="text block-wrapper"&gt;
+                                        &lt;p&gt;
+                                            Швидко росте, очищує повітря
+                                        &lt;/p&gt;
+                                        &lt;p&gt;
+                                            Епіпремнум — це вічнозелена ліана з родини ароїдних, яка у природі росте в дощових лісах Південно-Східної Азії, Австралії та Полінезії. Її гнучкі пагони можуть сягати кількох метрів, утворюючи справжні зелені водоспади. Саме тому епіпремнум часто використовують для вертикального озеленення чи як ампельну рослину, яка красиво спадає з полиць і кашпо.
+                                        &lt;/p&gt;
+                                    &lt;/div&gt;
+                                    &lt;div class="image wrapper item"&gt;
+                                        &lt;img src="../img/content/epipremnum.png" alt="epipremnum"&gt;
+                                    &lt;/div&gt;
+                                    &lt;div class="text block-wrapper"&gt;
+                                        &lt;p&gt;
+                                            Головна перевага епіпремнуму — швидке зростання та здатність очищати повітря від токсинів, таких як формальдегід і чадний газ. Рослина не лише прикрашає приміщення, але й покращує мікроклімат, роблячи атмосферу здоровішою.
+                                        &lt;/p&gt;
+                                        &lt;p&gt;
+                                            У догляді епіпремнум невибагливий. Він добре переносить тінь і може рости при штучному освітленні, хоча яскраве розсіяне світло сприяє інтенсивнішому росту. Поливати його слід помірно, уникаючи застою води. Час від часу можна підрізати пагони, щоб надати кроні більш доглянутого вигляду.
+                                        &lt;/p&gt;
+                                        &lt;p&gt;
+                                            Завдяки своїй гнучкості, витривалості й виразній зелені, епіпремнум підходить для будь-якої оселі — від міської квартири до офісу. Ця рослина буквально оживляє простір і створює відчуття природного затишку.
+                                        &lt;/p&gt;
+                                    &lt;/div&gt;
+                                &lt;/div&gt;
+                            &lt;/section&gt;
+                            &lt;section class="top-5"&gt;
+                                &lt;div class="top-5 header"&gt;
+                                    &lt;h2&gt;
+                                        Топ 5 рослин для початківців
+                                    &lt;/h2&gt;
+                                    &lt;h3&gt;
+                                        Спатифілум
+                                    &lt;/h3&gt;
+                                &lt;/div&gt;
+                                &lt;div class="top-5 block-wrapper main"&gt;
+                                    &lt;div class="text block-wrapper"&gt;
+                                        &lt;p&gt;
+                                            «Жіноче щастя» — любить вологість
+                                        &lt;/p&gt;
+                                        &lt;p&gt;
+                                            Спатифілум — вічнозелена тропічна рослина з родини ароїдних, яку часто називають «жіноче щастя». Її темно-зелене листя контрастує з білими або кремовими квітками, що нагадують витончені вітрила. Квітучий спатифілум виглядає дуже елегантно, тому його часто обирають як подарунок або прикрасу для інтер’єру.
+                                        &lt;/p&gt;
+                                    &lt;/div&gt;
+                                    &lt;div class="image wrapper item"&gt;
+                                        &lt;img src="../img/content/spathiphyllum.jpg" alt="spathiphyllum"&gt;
+                                    &lt;/div&gt;
+                                    &lt;div class="text block-wrapper"&gt;
+                                        &lt;p&gt;
+                                            У природі спатифілум росте на вологих берегах річок та у затінених лісах Південної Америки, тому в домашніх умовах він надає перевагу підвищеній вологості й помірному освітленню без прямих сонячних променів. Поливати слід регулярно, але без застою води. У спеку рослину можна обприскувати, щоб підтримувати потрібний рівень вологи.
+                                        &lt;/p&gt;
+                                        &lt;p&gt;
+                                            Окрім декоративності, спатифілум має здатність очищати повітря від шкідливих речовин. Він ефективно поглинає токсини, створюючи приємну атмосферу свіжості у кімнаті. Крім того, за повір’ями, ця рослина приносить у дім гармонію, любов і затишок.
+                                        &lt;/p&gt;
+                                        &lt;p&gt;
+                                            Спатифілум — чудовий вибір для початківців, адже він прощає незначні помилки в догляді, а своїми ніжними квітами вдячно відгукується на турботу. Ця рослина стане справжньою окрасою будь-якого дому.
+                                        &lt;/p&gt;
+                                    &lt;/div&gt;
+                                &lt;/div&gt;
+                            &lt;/section&gt;
+                            &lt;section class="top-5"&gt;
+                                &lt;div class="top-5 header"&gt;
+                                    &lt;h2&gt;
+                                        Топ 5 рослин для початківців
+                                    &lt;/h2&gt;
+                                    &lt;h3&gt;
+                                        Хойя
+                                    &lt;/h3&gt;
+                                &lt;/div&gt;
+                                &lt;div class="top-5 block-wrapper main"&gt;
+                                    &lt;div class="text block-wrapper"&gt;
+                                        &lt;p&gt;
+                                            Красива квітуча ліана з ароматними квітами
+                                        &lt;/p&gt;
+                                        &lt;p&gt;
+                                            Хойя — це декоративна тропічна ліана, відома своїми соковитими листками та ароматними зіркоподібними квітами, які збираються у щільні парасольки. Її ще називають «восковою плющем» через характерний блиск листя та квітів. У природі хойя росте в Азії та на островах Тихого океану, де обвиває дерева, утворюючи довгі звисаючі пагони.
+                                        &lt;/p&gt;
+                                    &lt;/div&gt;
+                                    &lt;div class="image wrapper item"&gt;
+                                        &lt;img src="../img/content/hoya.png" alt="hoya"&gt;
+                                    &lt;/div&gt;
+                                    &lt;div class="text block-wrapper"&gt;
+                                        &lt;p&gt;
+                                            У кімнатних умовах хойя невибаглива, однак для рясного цвітіння їй потрібне яскраве розсіяне світло. Вона чудово росте у підвісних кашпо або на опорах, де її пагони можуть досягати понад двох метрів. Поливати рослину потрібно помірно, даючи ґрунту підсохнути між поливами. Надлишок вологи може зашкодити кореням.
+                                        &lt;/p&gt;
+                                        &lt;p&gt;
+                                            Квіти хойї не лише гарні, а й дуже ароматні — особливо у вечірній час. Вони тримаються на рослині кілька тижнів і можуть з’являтися кілька разів на рік. Догляд за нею приносить справжнє задоволення, адже кожне нове суцвіття — це нагорода за терпіння та турботу.
+                                        &lt;/p&gt;
+                                        &lt;p&gt;
+                                            Хойя — чудовий вибір для тих, хто хоче мати вдома щось незвичайне. Вона додає інтер’єру тропічних нот, виглядає розкішно й водночас не потребує багато уваги. Це справжня знахідка для квітникарів-початківців.
+                                        &lt;/p&gt;
+                                    &lt;/div&gt;
+                                &lt;/div&gt;
+                            &lt;/section&gt;
+                            &lt;section class="advice"&gt;
+                                &lt;div class="advice header"&gt;
+                                    &lt;h2&gt;
+                                        Поширені проблеми та рішення
+                                    &lt;/h2&gt;
+                                &lt;/div&gt;
+                                &lt;div class="advice main"&gt;
+                                    &lt;table class="advice"&gt;
+                                        &lt;thead&gt;
+                                            &lt;tr&gt;
+                                                &lt;th&gt;
+                                                    Проблема
+                                                &lt;/th&gt;
+                                                &lt;th&gt;
+                                                    Рішення
+                                                &lt;/th&gt;
+                                            &lt;/tr&gt;
+                                        &lt;/thead&gt;
+                                        &lt;tbody&gt;
+                                            &lt;tr&gt;
+                                                &lt;td&gt;
+                                                    Жовтіють листки
+                                                &lt;/td&gt;
+                                                &lt;td&gt;
+                                                    &lt;ol&gt;
+                                                        &lt;li&gt;
+                                                            Перевірте вологість ґрунту - дайте просохнути 2-3 см верхнього шару
+                                                        &lt;/li&gt;
+                                                        &lt;li&gt;
+                                                            Зменшіть полив взимку
+                                                        &lt;/li&gt;
+                                                        &lt;li&gt;
+                                                            Підживліть рослину комплексним добривом
+                                                        &lt;/li&gt;
+                                                    &lt;/ol&gt;
+                                                &lt;/td&gt;
+                                            &lt;/tr&gt;
+                                            &lt;tr&gt;
+                                                &lt;td&gt;
+                                                    Сохнуть кінчики листків
+                                                &lt;/td&gt;
+                                                &lt;td&gt;
+                                                    &lt;ol&gt;
+                                                        &lt;li&gt;
+                                                            Підвищте вологість повітря - поставьте поруч посуд з водою
+                                                        &lt;/li&gt;
+                                                        &lt;li&gt;
+                                                            Регулярно обприскуйте листя
+                                                        &lt;/li&gt;
+                                                        &lt;li&gt;
+                                                            Уникніть розташування біля батарей
+                                                        &lt;/li&gt;
+                                                    &lt;/ol&gt;
+                                                &lt;/td&gt;
+                                            &lt;/tr&gt;
+                                            &lt;tr&gt;
+                                                &lt;td&gt;
+                                                    З'явився павутинний кліщ
+                                                &lt;/td&gt;
+                                                &lt;td&gt;
+                                                    &lt;ol&gt;
+                                                        &lt;li&gt;
+                                                            Ізолюйте рослину від інших
+                                                        &lt;/li&gt;
+                                                        &lt;li&gt;
+                                                            Промийте листя м'яким мильним розчином
+                                                        &lt;/li&gt;
+                                                        &lt;li&gt;
+                                                            Обробіть спеціальними препаратами (акарицидами)
+                                                        &lt;/li&gt;
+                                                    &lt;/ol&gt;
+                                                &lt;/td&gt;
+                                            &lt;/tr&gt;
+                                        &lt;/tbody&gt;
+                                    &lt;/table&gt;
+                                &lt;/div&gt;
+                            &lt;/section&gt;
+                            &lt;section class="feedback"&gt;
+                                &lt;div class="header feeback"&gt;
+                                    &lt;h2&gt;
+                                    &lt;/h2&gt;
+                                &lt;/div&gt;
+                                &lt;form class="feedback form wrapper" id="contactForm"&gt;
+                                    &lt;div class="field wrapper"&gt;
+                                        &lt;input type="text" id="name" name="name" placeholder="Ваше ім’я" required&gt;
+                                        &lt;label for="name"&gt;
+                                            Ім'я
+                                        &lt;/label&gt;
+                                    &lt;/div&gt;
+                                    &lt;div class="field wrapper"&gt;
+                                        &lt;input type="email" id="email" name="email" placeholder="example@gmail.com" required&gt;
+                                        &lt;label for="email"&gt;
+                                            Електронна пошта
+                                        &lt;/label&gt;
+                                    &lt;/div&gt;
+                                    &lt;div class="field wrapper"&gt;
+                                        &lt;textarea id="message" name="message" rows="4" placeholder="Ваше повідомлення..." required&gt;
+                                        &lt;/textarea&gt;
+                                        &lt;label for="message"&gt;
+                                            Повідомлення
+                                        &lt;/label&gt;
+                                    &lt;/div&gt;
+                                    &lt;button type="submit"&gt;
+                                        Надіслати
+                                    &lt;/button&gt;
+                                &lt;/form&gt;
+                            &lt;/section&gt;
+                        &lt;/main&gt;
+                        &lt;footer&gt;
+                            &lt;div class="text wrapper centered"&gt;
+                                &lt;a 
+                class="text"
+                href="./copyright.html"
+            &gt;
+                                    @ 2025 Copyright. All rights reserved.
+                                &lt;/a&gt;
+                            &lt;/div&gt;
+                            &lt;div class="social-media wrapper"&gt;
+                                &lt;div class="icon wrapper"&gt;
+                                    &lt;svg-icon src="../img/social/facebook.svg"&gt;
+                                    &lt;/svg-icon&gt;
+                                &lt;/div&gt;
+                                &lt;div class="icon wrapper"&gt;
+                                    &lt;svg-icon src="../img/social/instagram.svg"&gt;
+                                    &lt;/svg-icon&gt;
+                                &lt;/div&gt;
+                                &lt;div class="icon wrapper"&gt;
+                                    &lt;svg-icon src="../img/social/youtube.svg"&gt;
+                                    &lt;/svg-icon&gt;
+                                &lt;/div&gt;
+                                &lt;div class="icon wrapper"&gt;
+                                    &lt;svg-icon src="../img/social/tiktok.svg"&gt;
+                                    &lt;/svg-icon&gt;
+                                &lt;/div&gt;
+                                &lt;div class="icon wrapper"&gt;
+                                    &lt;svg-icon src="../img/social/telegram.svg"&gt;
+                                    &lt;/svg-icon&gt;
+                                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/footer&gt;
+        &lt;script type="module" src="../js/socialMedia.js" defer&gt;
+        &lt;/script&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
+            </pre>
+            <h4>3. CSS-код застосунку:</h4>
+            <pre>
+html {
+    height: 100%;
+    background-color: var(--normal_col);
+    font-size: 1dvw;
+}
+* {
+    font-family: 'Rubik', 'Varela Round', serif;
+}
+header, footer {
+    display: flex;
+    flex-flow: row nowrap;
+
+    height: 10dvh;
+
+    background-color: var(--dark_col);
+}
+header {
+    justify-content: space-between;
+}
+footer {
+    position: relative;
+    justify-content: center;
+    align-items: center;
+}
+
+.wrapper {
+    display: flex;
+}
+.icon.wrapper {
+    height: 100%;
+    aspect-ratio: 1;
+}
+img.icon,
+svg-icon svg {
+    height: 60%;
+    width: auto;
+    margin: auto;
+    cursor: pointer;
+}
+svg-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+} 
+
+.name.wrapper {
+    justify-content: center;
+    align-items: center;
+    padding: 0.25em;
+}
+h1.name {
+    color: var(--normal_col);
+    font-size: 1.5em;
+    transition: 250ms;
+}
+
+.social-media.wrapper {
+    position: absolute;
+    right: 0;
+    height: 100%;
+    padding: 0 1dvh;
+}
+.text.wrapper.centered {
+    justify-content: center;
+    align-items: center;
+}
+footer a.text {
+    color: var(--normal_col);
+    transition: 250ms;
+    cursor: pointer;
+    text-decoration: none;
+}
+footer a.text:hover {
+    color: var(--bright_col);
+}
+nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1em;
+    font-size: 1.35em;
+    padding: 0 1em;
+}
+nav > a {
+    transition: 250ms;
+    color: var(--normal_col);
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    padding: 0 0.25em;
+    text-align: center;
+    display: inline;
+}
+nav > a:hover {
+    color: var(--bright_col);
+}
+
+#logo {
+    display: flex;
+    cursor: pointer;
+    justify-content: start;
+}
+#logo:hover h1.name {
+    color: var(--bright_col);
+}
+
+.hero {
+    gap: 2em;
+}
+.hero > .wrapper {
+    display: flex;
+    justify-content: stretch;
+    flex-flow: column nowrap;
+    gap: 2em;
+}
+
+.image.wrapper.group {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-flow: row nowrap;
+    width: auto;
+}
+.image.wrapper.item {
+    border: 0.2em solid var(--dark_col);
+    border-radius: 2dvh;
+    overflow: hidden;
+    flex: 0 0 auto;
+}
+.image.wrapper.item > img {
+    width: 100%;
+    height: 100%;
+}
+
+.content.wrapper {
+    flex-flow: column nowrap;
+    gap: 1em;
+}
+
+button.content {
+    background-color: var(--normal_col);
+    border: 0.2em solid var(--dark_col);
+    border-radius: 2em;
+    padding: 0.25em 0.5em;
+    cursor: pointer;
+    transition: 250ms;
+    color: var(--dark_col);
+    font-weight: 700;
+}
+button.content:hover {
+    border-color: var(--bright_col);
+    color: var(--bright_col);
+}
+
+section.top-5 {
+    gap: 1em;
+}
+div.top-5.header {
+    flex-flow: column nowrap;
+    gap: 1em;
+}
+
+div.top-5.main .image.wrapper.item {
+    float: right;
+    margin: 0.5em 0 0.5em 0.5em;
+}
+
+.block-wrapper {
+    display: block;
+}
+.text.block-wrapper p {
+    margin: 0.5em;
+}
+
+section.advice {
+    gap: 1em;
+}
+
+table.advice {
+    border-spacing: 0;
+}
+
+div.advice.main {
+    border-radius: 1em;
+    overflow: hidden;
+    border: 0.2em solid var(--dark_col);
+}
+
+table.advice td:first-child {
+    text-align: center;
+}
+
+table.advice tr > * {
+    padding: 0.25em 0.5em;
+}
+
+table.advice td {
+    border-top: 0.2em solid var(--dark_col);
+}
+
+table.advice tr > *:not(:last-child) {
+    border-right: 0.2em solid var(--dark_col);
+}
+
+.field.wrapper {
+    flex-flow: column nowrap;
+    gap: 0.25em;
+}
+.field.wrapper label {
+    margin-left: 1em;
+}
+form {
+    background-color: transparent;
+    border: 0.2em solid var(--dark_col);
+    padding: 1em;
+    border-radius: 1.5em;
+}
+.field.wrapper input,
+.field.wrapper textarea,
+form button {
+    background-color: transparent;
+    color: var(--dark_col);
+    border: 0.2em solid var(--dark_col);
+    border-radius: 1em;
+    padding: 0.25em 0.5em;
+    transition: 250ms;
+    width: 20em;
+}
+.field.wrapper label {
+    transition: 250ms;
+}
+.field.wrapper *:first-child:hover,
+.field.wrapper *:first-child:hover ~ label,
+.field.wrapper *:first-child:focus,
+.field.wrapper *:first-child:focus ~ label,
+form.feedback button:hover { 
+    color: var(--bright_col);
+    border-color: var(--bright_col);
+}
+
+.field.wrapper {
+    flex-flow: column-reverse nowrap;
+}
+
+.hero .image.wrapper.item {
+    width: 30dvh;
+    height: 30dvh;
+}
+.top-5 .image.wrapper.item {
+    width: 20dvh;
+    height: 20dvh;
+}
+
+.field.wrapper textarea {
+    resize: none;
+    height: 6em;
+}
+.field.wrapper input {
+    height: 2em;
+}
+
+form.feedback {
+    gap: 1em;
+    flex-flow: column nowrap;
+}
+form button {
+    cursor: pointer;
+}
+
+*, *::after, *::before {
+    box-sizing: border-box;
+    outline: none;
+}
+            </pre>
+            <h4>4. Вигляд застосунку у браузері:</h4>
+            <img src="../../img/page.png" alt="page" class="page">
+        </section>
+    </main>
+    <footer class="wrapper centered">
+        <p>Copyright @ 2025 Приходько Роман</p>
+    </footer>
+    <script src="../../js/loadLabList.js"></script>
+    <script src="../js/initData.js"></script>
+</body>
+</html>

@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../css/root.css">
+    <link rel="stylesheet" href="../../css/general.css">
+    <link rel="stylesheet" href="../css/table.css">
+    <link rel="stylesheet" href="../css/block.css">
+    <title>Report</title>
+</head>
+<body>
+    <header>
+        <div class="wrapper centered intro">
+            <div class="wrapper centered info">
+                <div class="wrapper centered labname">
+                    <h1>Звіти з лабораторних робіт</h1>        
+                    <h1>з дисципліни «WEB-орієнтовані технології. FrontEnd розробки»</h1>
+                </div>
+                <div class="wrapper centered author">
+                    <p>Виконавець: Студент групи ІП-34 Приходько Роман Юрійович</p>
+                </div>
+            </div>
+            <div class="wrapper centered profile">
+                <img class="profile" src="../../img/pfp.jpg" alt="pfp">
+            </div>
+        </div>
+        <nav id="lablist" class="wrapper centered"></nav>
+    </header>
+    <main>
+        <aside class="wrapper centered">
+            <ul>
+                <li>
+                    <div class="wrapper">
+                        <a href="index-1.html">Тема. Мета. Місце розташування сайту, звіту</a>
+                    </div>
+                </li>
+                <li>
+                    <div class="wrapper">
+                        <a href="index-2.html">Завдання 1. Зовнішній вигляд макету. Код макету.</a>
+                    </div>
+                </li>
+                <li>
+                    <div class="wrapper">
+                        <a href="index-3.html">Завдання 2</a>
+                    </div>
+                </li>
+                <li>
+                    <div class="wrapper sub">
+                        <a href="index-4.html">Фіксована таблична верстка</a>
+                    </div>
+                </li>
+                <li>
+                    <div class="wrapper sub active">
+                        <a href="index-5.html">Гумова таблична верстка</a>
+                    </div>
+                </li>
+                <li>
+                    <div class="wrapper sub">
+                        <a href="index-6.html">Фіксована блокова верстка</a>
+                    </div>
+                </li>
+                <li>
+                    <div class="wrapper sub">
+                        <a href="index-7.html">Гумова блокова верстка</a>
+                    </div>
+                </li>
+                <li>
+                    <div class="wrapper">
+                        <a href="index-8.html">Висновки</a>
+                    </div>
+                </li>
+            </ul>
+        </aside>
+        <section class="wrapper lab-content">
+            <h4>1. HTML-код:</h4>
+            <pre>
+&lt;table class="pattern fixed"&gt;
+    &lt;tr class="top"&gt;
+        &lt;td class="left" rowspan="3"&gt;
+            2
+        &lt;/td&gt;
+        &lt;td class="top"&gt;
+            1
+        &lt;/td&gt;
+        &lt;td class="right" rowspan="3"&gt;
+        &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr class="middle"&gt;
+        &lt;td class="middle"&gt;
+            4
+        &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr class="bottom"&gt;
+        &lt;td class="bottom"&gt;
+            3
+        &lt;/td&gt;
+    &lt;/tr&gt;
+&lt;/table&gt;
+            </pre>
+            <h4>2. CSS-код:</h4>
+            <pre>
+table {
+    width: 50%;
+    border: 0.1em solid black;
+    height: 50%;
+    border-collapse: collapse;
+}
+td {
+    border: 0.1em solid black;
+    text-align: center;
+    vertical-align: middle;
+}
+
+tr.top, tr.bottom {
+    height: 10%;
+}
+
+td.top, td.bottom {
+    background-color: royalblue;
+}
+td.left {
+    width: 10%;
+    background-color: yellow;
+}
+td.right {
+    width: 5%;
+    background-color: lightgray;
+}
+            </pre>
+            <h4>3. Результат:</h4>
+            <table class="pattern responsive">
+                <tr class="top">
+                    <td class="left" rowspan="3">2</td>
+                    <td class="top">1</td>
+                    <td class="right" rowspan="3"></td>
+                </tr>
+                <tr class="middle">
+                    <td class="middle">4</td>
+                </tr>
+                <tr class="bottom">
+                    <td class="bottom">3</td>
+                </tr>
+            </table>
+        </section>
+    </main>
+    <footer class="wrapper centered">
+        <p>Copyright @ 2025 Приходько Роман</p>
+    </footer>
+    <script src="../../js/loadLabList.js"></script>
+    <script src="../js/initData.js"></script>
+</body>
+</html>

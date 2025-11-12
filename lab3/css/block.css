@@ -1,0 +1,71 @@
+div.pattern {
+    display: block;
+    border: 0.1em solid black;
+    text-align: center;
+}
+div.top.pattern {
+    background-color: royalblue;
+}
+div.left.pattern {
+    float: left;
+    background-color: yellow;
+}
+div.middle.pattern {
+    float: left;
+    background-color: #EEEEEE;
+}
+div.right.pattern {
+    float: left;
+    background-color: yellow;
+}
+div.bottom.pattern {
+    background-color: royalblue;
+    float: left;
+}
+
+div.top.pattern.responsive {
+    width: 100%;
+    height: 10%;
+}
+div.left.pattern.responsive {
+    width: 30%;
+    height: 80%;
+}
+div.middle.pattern.responsive {
+    width: 40%;
+    height: 80%;
+}
+div.right.pattern.responsive {
+    width: 30%;
+    height: 80%;
+}
+div.bottom.pattern.responsive {
+    width: 100%;
+    height: 10%;
+}
+
+div.top.pattern.fixed {
+    width: 500px;
+    height: 30px;
+}
+div.left.pattern.fixed {
+    width: 150px;
+    height: 240px;
+}
+div.middle.pattern.fixed {
+    width: 200px;
+    height: 240px;
+}
+div.right.pattern.fixed {
+    width: 150px;
+    height: 240px;
+}
+div.bottom.pattern.fixed {
+    width: 500px;
+    height: 30px;
+}
+
+div.pattern-wrapper {
+    width: 70%;
+    border: none;
+}

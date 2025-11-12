@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../css/root.css">
+    <link rel="stylesheet" href="../../css/general.css">
+    <title>Report</title>
+</head>
+<body>
+    <header>
+        <div class="wrapper centered intro">
+            <div class="wrapper centered info">
+                <div class="wrapper centered labname">
+                    <h1>Звіти з лабораторних робіт</h1>        
+                    <h1>з дисципліни «WEB-орієнтовані технології. FrontEnd розробки»</h1>
+                </div>
+                <div class="wrapper centered author">
+                    <p>Виконавець: Студент групи ІП-34 Приходько Роман Юрійович</p>
+                </div>
+            </div>
+            <div class="wrapper centered profile">
+                <img class="profile" src="../../img/pfp.jpg" alt="pfp">
+            </div>
+        </div>
+        <nav id="lablist" class="wrapper centered"></nav>
+    </header>
+    <main>
+        <aside class="wrapper centered">
+            <ul>
+                <li>
+                    <div class="wrapper">
+                        <a href="index-1.html">Тема. Мета. Місце розташування сайту, звіту</a>
+                    </div>
+                </li>
+                <li>
+                    <div class="wrapper">
+                        <a href="index-2.html">Способи підключення стилів</a>
+                    </div>
+                </li>
+                <li>
+                    <div class="wrapper">
+                        <a href="index-3.html">Селектори</a>
+                    </div>
+                </li>
+                <li>
+                    <div class="wrapper sub">
+                        <a href="index-4.html">Селектори тегу</a>
+                    </div>
+                </li>
+                <li>
+                    <div class="wrapper sub">
+                        <a href="index-5.html">Селектори класу</a>
+                    </div>
+                </li>
+                <li>
+                    <div class="wrapper sub">
+                        <a href="index-6.html">Селектори ідентифіторів</a>
+                    </div>
+                </li>
+                <li>
+                    <div class="wrapper sub active">
+                        <a href="index-7.html">Інші селектори</a>
+                    </div>
+                </li>
+                <li>
+                    <div class="wrapper">
+                        <a href="index-8.html">Висновки</a>
+                    </div>
+                </li>
+            </ul>
+        </aside>
+        <section class="wrapper lab-content">
+            <h4> Застосування дочірніх селекторів у моїй роботі: </h4>
+            <p> HTML-код елемента: </p>
+            <pre>
+&lt;div class="text block-wrapper"&gt;
+    &lt;p&gt;
+        Рослина має не лише декоративну, а й практичну цінність. Сансевієрія чудово очищує повітря в приміщенні, поглинаючи шкідливі речовини, такі як формальдегід і бензол, а натомість виділяє кисень навіть уночі. Саме тому її часто можна побачити не лише вдома, але й у школах, лікарнях та офісах.
+    &lt;/p&gt;
+    &lt;p&gt;
+        Ще одна причина популярності «тещиного язика» — його невибагливість. Це справжня «майже невинищна» рослина, яка витримує як посуху, так і недостатнє освітлення. Її не потрібно часто поливати, а пересаджують сансевієрію лише раз на кілька років. Вона добре росте в невеликих горщиках і поступово утворює густі кущики з безліччю листків.
+    &lt;/p&gt;
+    &lt;p&gt;
+        Культура особливо ефектно виглядає в групових посадках — коли кілька сортів із різним малюнком листя висаджують в один горщик. Така композиція додає приміщенню свіжості, створює відчуття природності та гармонії.
+    &lt;/p&gt;
+    &lt;p&gt;
+        Сансевієрія — справжня класика серед кімнатних рослин: витривала, красива та корисна. Якщо ви шукаєте зеленого «сусіда», який не потребує багато уваги, але прикрасить будь-який інтер’єр, «тещин язик» стане ідеальним вибором.
+    &lt;/p&gt;
+&lt;/div&gt;
+            </pre>
+            <p> CSS-код елемента: </p>
+            <pre>
+.text.block-wrapper p {
+    margin: 0.5em;
+}
+            </pre>
+        </section>
+    </main>
+    <footer class="wrapper centered">
+        <p>Copyright @ 2025 Приходько Роман</p>
+    </footer>
+    <script src="../../js/loadLabList.js"></script>
+    <script src="../js/initData.js"></script>
+</body>
+</html>

@@ -1,0 +1,17 @@
+&lt;div class="pattern-wrapper"&gt;
+    &lt;div class="top pattern fixed"&gt;
+        1
+    &lt;/div&gt;
+    &lt;div class="left pattern fixed"&gt;
+        5
+    &lt;/div&gt;
+    &lt;div class="middle pattern fixed"&gt;
+        4
+    &lt;/div&gt;
+    &lt;div class="right pattern fixed"&gt;
+        2
+    &lt;/div&gt;
+    &lt;div class="bottom pattern fixed"&gt;
+        3
+    &lt;/div&gt;
+&lt;/div&gt;

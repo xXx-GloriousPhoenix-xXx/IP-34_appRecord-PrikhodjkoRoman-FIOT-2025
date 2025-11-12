@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../css/root.css">
+    <link rel="stylesheet" href="../../css/general.css">
+    <title>Report</title>
+</head>
+<body>
+    <header>
+        <div class="wrapper centered intro">
+            <div class="wrapper centered info">
+                <div class="wrapper centered labname">
+                    <h1>Звіти з лабораторних робіт</h1>        
+                    <h1>з дисципліни «WEB-орієнтовані технології. FrontEnd розробки»</h1>
+                </div>
+                <div class="wrapper centered author">
+                    <p>Виконавець: Студент групи ІП-34 Приходько Роман Юрійович</p>
+                </div>
+            </div>
+            <div class="wrapper centered profile">
+                <img class="profile" src="../../img/pfp.jpg" alt="pfp">
+            </div>
+        </div>
+        <nav id="lablist" class="wrapper centered"></nav>
+    </header>
+    <main>
+        <aside class="wrapper centered">
+            <ul>
+                <li>
+                    <div class="wrapper">
+                        <a href="index-1.html">Тема. Мета. Місце розташування сайту, звіту</a>
+                    </div>
+                </li>
+                <li>
+                    <div class="wrapper">
+                        <a href="index-2.html">Опис предметного середовища</a>
+                    </div>
+                </li>
+                <li>
+                    <div class="wrapper">
+                        <a href="index-3.html">Структура документа</a>
+                    </div>
+                </li>
+                <li>
+                    <div class="wrapper sub active">
+                        <a href="index-4.html">HTML-код таблиці</a>
+                    </div>
+                </li>
+                <li>
+                    <div class="wrapper sub">
+                        <a href="index-5.html">HTML-код форми</a>
+                    </div>
+                </li>
+                <li>
+                    <div class="wrapper sub">
+                        <a href="index-6.html">HTML-код зображення</a>
+                    </div>
+                </li>
+                <li>
+                    <div class="wrapper">
+                        <a href="index-7.html">Висновки</a>
+                    </div>
+                </li>
+            </ul>
+        </aside>
+        <section class="wrapper lab-content">
+            <p>На головній сторінці використано таблицю для переліку основних проблем при догляді за рослинами</p>
+            <pre>
+&lt;table class="advice"&gt;
+    &lt;thead&gt;
+        &lt;tr&gt;
+            &lt;th&gt;
+                Проблема
+            &lt;/th&gt;
+            &lt;th&gt;
+                Рішення
+            &lt;/th&gt;
+        &lt;/tr&gt;
+    &lt;/thead&gt;
+    &lt;tbody&gt;
+        &lt;tr&gt;
+            &lt;td&gt;
+                Жовтіють листки
+            &lt;/td&gt;
+            &lt;td&gt;
+                &lt;ol&gt;
+                    &lt;li&gt;
+                        Перевірте вологість ґрунту - дайте просохнути 2-3 см верхнього шару
+                    &lt;/li&gt;
+                    &lt;li&gt;
+                        Зменшіть полив взимку
+                    &lt;/li&gt;
+                    &lt;li&gt;
+                        Підживліть рослину комплексним добривом
+                    &lt;/li&gt;
+                &lt;/ol&gt;
+            &lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;
+                Сохнуть кінчики листків
+            &lt;/td&gt;
+            &lt;td&gt;
+                &lt;ol&gt;
+                    &lt;li&gt;
+                        Підвищте вологість повітря - поставьте поруч посуд з водою
+                    &lt;/li&gt;
+                    &lt;li&gt;
+                        Регулярно обприскуйте листя
+                    &lt;/li&gt;
+                    &lt;li&gt;
+                        Уникніть розташування біля батарей
+                    &lt;/li&gt;
+                &lt;/ol&gt;
+            &lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;
+                З'явився павутинний кліщ
+            &lt;/td&gt;
+            &lt;td&gt;
+                &lt;ol&gt;
+                    &lt;li&gt;
+                        Ізолюйте рослину від інших
+                    &lt;/li&gt;
+                    &lt;li&gt;
+                        Промийте листя м'яким мильним розчином
+                    &lt;/li&gt;
+                    &lt;li&gt;
+                        Обробіть спеціальними препаратами (акарицидами)
+                    &lt;/li&gt;
+                &lt;/ol&gt;
+            &lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/tbody&gt;
+&lt;/table&gt;
+            </pre>
+        </section>
+    </main>
+    <footer class="wrapper centered">
+        <p>Copyright @ 2025 Приходько Роман</p>
+    </footer>
+    <script src="../../js/loadLabList.js"></script>
+    <script src="./../js/initData.js"></script>
+</body>
+</html>

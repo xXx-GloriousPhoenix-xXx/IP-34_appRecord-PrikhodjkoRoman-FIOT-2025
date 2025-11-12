@@ -1,0 +1,212 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--primary_color);
+}
+body {
+    height: 100dvh;
+}
+.wrapper {
+    display: flex;
+}
+.centered {
+    justify-content: center;
+    align-items: center;
+}
+.intro {
+    position: relative;
+    height: 10em;
+    align-items: stretch;
+}
+.info {
+    flex-flow: column nowrap;
+    background-color: var(--primary_color);
+    color: var(--secondary_color_3);
+    width: 100%;
+    padding: 1em;
+    gap: 1em;
+    height: auto;
+}
+ul {
+    list-style-type: none;
+    display: flex;
+    gap: 1em;
+    flex-flow: column nowrap;
+    padding: 0;
+}
+ul .wrapper {
+    background-color: var(--secondary_color_3);
+    border: 0.2em solid var(--primary_color);
+    color: var(--primary_color);
+    padding: 0.5em 1em;
+    border-radius: 1em;
+    cursor: pointer;
+    transition: 250ms;
+    font-size: 1.15em;
+}
+ul .wrapper:hover,
+ul .wrapper.active {
+    background-color: var(--primary_color);
+    color: var(--secondary_color_3);
+}
+p {
+    margin: 0;
+}
+.sub {
+    margin-left: 2em;
+}
+a {
+    text-decoration: none;
+    color: var(--primary_color);
+}
+main {
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    padding: 1em 1em 0 1em;
+    background-color: var(--primary_color);
+    width: 100%;
+    gap: 1em;
+}
+footer {
+    background-color: var(--primary_color);
+    color: var(--secondary_color_3);
+    height: 7.5dvh;
+}
+main > * {
+    background-color: var(--secondary_color_3);
+    display: flex;
+    padding: 1em;
+    border-radius: 1em;
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+ul {
+    margin: 0;
+}
+#lablist {
+    margin: 0 1em;
+    background-color: var(--secondary_color_3);
+    color: var(--primary_color);
+    border-radius: 1em;
+    padding: 1em;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    gap: 0.5em;
+}
+#lablist > div {
+    display: flex;
+    border: 0.2em solid var(--primary_color);
+    padding: 0.5em 0.75em;
+    color: var(--primary_color);
+    border-radius: 0.75em;
+    cursor: pointer;
+    transition: 250ms;
+    font-size: 1.15em;
+    font-weight: bold;
+}
+#lablist > div.not-found {
+    cursor: default;
+    background: repeating-linear-gradient(
+      45deg,
+      color-mix(in srgb, var(--primary_color) 50%, transparent),
+      color-mix(in srgb, var(--primary_color) 50%, transparent) 2px,
+      transparent 2px,
+      transparent 10px
+    );
+  }
+#lablist > div:not(.not-found):hover,
+#lablist > div.active {
+    background-color: var(--primary_color);
+    color: var(--secondary_color_3);
+}
+#lablist > div:not(.not-found):hover a,
+#lablist > div.active a {
+    color: var(--secondary_color_3);
+}
+.labname {
+    flex-flow: column nowrap;
+}
+h1 {
+    margin: 0;
+}
+html {
+    font-size: 1dvw;
+    scrollbar-width: thin;
+    scrollbar-color: var(--secondary_color_3) var(--primary_color);
+}
+.author p {
+    font-size: 1.15em;
+}
+div.profile img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+div.profile {
+    position: absolute;
+    inset: 2em 2em auto auto;
+    background-color: gray;
+    width: 6em;
+    aspect-ratio: 1;
+    overflow: hidden;
+    border-radius: 1em;
+    border: 0.2em solid var(--secondary_color_3);
+}
+.lab-content {
+    flex-flow: column nowrap;
+    padding: 2em;
+    color: var(--primary_color);
+}
+.lab-content p {
+    margin: 0.5em 0;
+    font-size: 1.25em;
+}
+.lab-content h3 {
+    text-align: center;
+}
+.lab-content h4 {
+    font-size: 1.15em;
+}
+.lab-content h3, h4 {
+    margin: 0.5em 0;
+}
+.page-link {
+    width: 0.6em;
+    height: auto;
+    margin: 0 0.25em 0 0;
+}
+.lab-content ul {
+    gap: 0.5em;
+}
+.lab-content ul li {
+    cursor: pointer;
+}
+aside ul div.active a,
+aside ul div:hover a {
+    color: var(--secondary_color_3);
+}
+aside ul a {
+    width: 100%;
+    height: 100%;
+}
+pre {
+    text-wrap: wrap;
+    overflow-y: scroll;
+    max-height: 50dvh;
+    background-color: var(--primary_color);
+    color: var(--secondary_color_3);
+    padding: 1em;
+    border-radius: 1em;
+    scrollbar-width: thin;
+    scrollbar-color: var(--secondary_color_3) var(--primary_color);
+    border: 1em solid var(--primary_color);
+}
+.lab-content img.page {
+    width: 100%;
+}
+.lab-content img.pattern {
+    width: 15%;
+}

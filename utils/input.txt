@@ -1,0 +1,7 @@
+<div class="pattern-wrapper">
+                <div class="top pattern fixed">1</div>
+                <div class="left pattern fixed">5</div>
+                <div class="middle pattern fixed">4</div>
+                <div class="right pattern fixed">2</div>
+                <div class="bottom pattern fixed">3</div>
+            </div>

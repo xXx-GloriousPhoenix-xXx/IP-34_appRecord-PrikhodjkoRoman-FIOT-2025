@@ -1,0 +1,33 @@
+table {
+    border: 0.1em solid black;
+    border-collapse: collapse;
+}
+table.fixed {
+    width: 500px;
+    height: 300px
+}
+table.responsive {
+    width: 50%;
+    height: 50%;
+}
+td {
+    border: 0.1em solid black;
+    text-align: center;
+    vertical-align: middle;
+}
+
+tr.top, tr.bottom {
+    height: 10%;
+}
+
+td.top, td.bottom {
+    background-color: royalblue;
+}
+td.left {
+    width: 10%;
+    background-color: yellow;
+}
+td.right {
+    width: 5%;
+    background-color: lightgray;
+}

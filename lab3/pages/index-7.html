@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../css/root.css">
+    <link rel="stylesheet" href="../../css/general.css">
+    <link rel="stylesheet" href="../css/table.css">
+    <link rel="stylesheet" href="../css/block.css">
+    <title>Report</title>
+</head>
+<body>
+    <header>
+        <div class="wrapper centered intro">
+            <div class="wrapper centered info">
+                <div class="wrapper centered labname">
+                    <h1>Звіти з лабораторних робіт</h1>        
+                    <h1>з дисципліни «WEB-орієнтовані технології. FrontEnd розробки»</h1>
+                </div>
+                <div class="wrapper centered author">
+                    <p>Виконавець: Студент групи ІП-34 Приходько Роман Юрійович</p>
+                </div>
+            </div>
+            <div class="wrapper centered profile">
+                <img class="profile" src="../../img/pfp.jpg" alt="pfp">
+            </div>
+        </div>
+        <nav id="lablist" class="wrapper centered"></nav>
+    </header>
+    <main>
+        <aside class="wrapper centered">
+            <ul>
+                <li>
+                    <div class="wrapper">
+                        <a href="index-1.html">Тема. Мета. Місце розташування сайту, звіту</a>
+                    </div>
+                </li>
+                <li>
+                    <div class="wrapper">
+                        <a href="index-2.html">Завдання 1. Зовнішній вигляд макету. Код макету.</a>
+                    </div>
+                </li>
+                <li>
+                    <div class="wrapper">
+                        <a href="index-3.html">Завдання 2</a>
+                    </div>
+                </li>
+                <li>
+                    <div class="wrapper sub">
+                        <a href="index-4.html">Фіксована таблична верстка</a>
+                    </div>
+                </li>
+                <li>
+                    <div class="wrapper sub">
+                        <a href="index-5.html">Гумова таблична верстка</a>
+                    </div>
+                </li>
+                <li>
+                    <div class="wrapper sub">
+                        <a href="index-6.html">Фіксована блокова верстка</a>
+                    </div>
+                </li>
+                <li>
+                    <div class="wrapper sub active">
+                        <a href="index-7.html">Гумова блокова верстка</a>
+                    </div>
+                </li>
+                <li>
+                    <div class="wrapper">
+                        <a href="index-8.html">Висновки</a>
+                    </div>
+                </li>
+            </ul>
+        </aside>
+        <section class="wrapper lab-content">
+            <h4>1. HTML-код:</h4>
+            <pre>
+&lt;div class="pattern-wrapper"&gt;
+    &lt;div class="top pattern fixed"&gt;
+        1
+    &lt;/div&gt;
+    &lt;div class="left pattern fixed"&gt;
+        5
+    &lt;/div&gt;
+    &lt;div class="middle pattern fixed"&gt;
+        4
+    &lt;/div&gt;
+    &lt;div class="right pattern fixed"&gt;
+        2
+    &lt;/div&gt;
+    &lt;div class="bottom pattern fixed"&gt;
+        3
+    &lt;/div&gt;
+&lt;/div&gt;
+            </pre>
+            <h4>2. CSS-код:</h4>
+            <pre>
+div {
+    display: block;
+    border: 0.1em solid black;
+    text-align: center;
+}
+div.top.pattern {
+    background-color: royalblue;
+}
+div.left.pattern {
+    float: left;
+    background-color: yellow;
+}
+div.middle.pattern {
+    float: left;
+    background-color: #EEEEEE;
+}
+div.right.pattern {
+    float: left;
+    background-color: yellow;
+}
+div.bottom.pattern {
+    background-color: royalblue;
+    float: left;
+}
+div.top.pattern.responsive {
+    width: 100%;
+    height: 10%;
+}
+div.left.pattern.responsive {
+    width: 30%;
+    height: 80%;
+}
+div.middle.pattern.responsive {
+    width: 40%;
+    height: 80%;
+}
+div.right.pattern.responsive {
+    width: 30%;
+    height: 80%;
+}
+div.bottom.pattern.responsive {
+    width: 100%;
+    height: 10%;
+}
+div.pattern-wrapper {
+    width: 70%;
+    border: none;
+}
+            </pre>
+            <h4>3. Результат:</h4>
+            <div class="pattern-wrapper">
+                <div class="top pattern fixed">1</div>
+                <div class="left pattern fixed">5</div>
+                <div class="middle pattern fixed">4</div>
+                <div class="right pattern fixed">2</div>
+                <div class="bottom pattern fixed">3</div>
+            </div>
+        </section>
+    </main>
+    <footer class="wrapper centered">
+        <p>Copyright @ 2025 Приходько Роман</p>
+    </footer>
+    <script src="../../js/loadLabList.js"></script>
+    <script src="../js/initData.js"></script>
+</body>
+</html>

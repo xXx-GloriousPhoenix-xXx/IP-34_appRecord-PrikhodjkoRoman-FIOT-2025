@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../css/root.css">
+    <link rel="stylesheet" href="../../css/general.css">
+    <title>Report</title>
+</head>
+<body>
+    <header>
+        <div class="wrapper centered intro">
+            <div class="wrapper centered info">
+                <div class="wrapper centered labname">
+                    <h1>Звіти з лабораторних робіт</h1>        
+                    <h1>з дисципліни «WEB-орієнтовані технології. FrontEnd розробки»</h1>
+                </div>
+                <div class="wrapper centered author">
+                    <p>Виконавець: Студент групи ІП-34 Приходько Роман Юрійович</p>
+                </div>
+            </div>
+            <div class="wrapper centered profile">
+                <img class="profile" src="../../img/pfp.jpg" alt="pfp">
+            </div>
+        </div>
+        <nav id="lablist" class="wrapper centered"></nav>
+    </header>
+    <main>
+        <aside class="wrapper centered">
+            <ul>
+                <li>
+                    <div class="wrapper">
+                        <a href="index-1.html">Тема. Мета. Місце розташування сайту, звіту</a>
+                    </div>
+                </li>
+                <li>
+                    <div class="wrapper active">
+                        <a href="index-2.html">Способи підключення стилів</a>
+                    </div>
+                </li>
+                <li>
+                    <div class="wrapper">
+                        <a href="index-3.html">Селектори</a>
+                    </div>
+                </li>
+                <li>
+                    <div class="wrapper sub">
+                        <a href="index-4.html">Селектори тегу</a>
+                    </div>
+                </li>
+                <li>
+                    <div class="wrapper sub">
+                        <a href="index-5.html">Селектори класу</a>
+                    </div>
+                </li>
+                <li>
+                    <div class="wrapper sub">
+                        <a href="index-6.html">Селектори ідентифіторів</a>
+                    </div>
+                </li>
+                <li>
+                    <div class="wrapper sub">
+                        <a href="index-7.html">Інші селектори</a>
+                    </div>
+                </li>
+                <li>
+                    <div class="wrapper">
+                        <a href="index-8.html">Висновки</a>
+                    </div>
+                </li>
+            </ul>
+        </aside>
+        <section class="wrapper lab-content">
+            <p>Існують кілька способів підключення стилів CSS до HTML-сторінки:</p>
+            <h4>1. Inline-стилі</h4>
+            <p>Якщо необхідно задати стиль певному елементу на сторінці, не застосовуючи зовнішніх стилів і елемента style, можна скористатись атрибутом style цього елементу:</p>
+            <pre>
+&lt;p style="color: red"&gt;
+    Абзац з літерами червоного кольору
+&lt;/p&gt;
+            </pre>
+            <h4>2. Таблиці стилів документу</h4>
+            <p>
+Називаються так тому, що розташовуються безпосередньо в HTML-документі і застосовуються лише до нього. CSS-стилі та коментарі розташовуються між тегами, що відкривають і закривають елемент
+&lt;style&gt;
+            </p>
+            <pre>
+&lt;style type="text/css"&gt;
+    ...
+    p {
+        color: #333333;
+        text-align: justify;
+    }
+    ...
+&lt;/style&gt;
+            </pre>
+            <h4>3. Зовнішні стилі</h4>
+            <p>
+Застосовуються за допомогою елемента
+&lt;link&gt;
+, який повинен розташовуватися всередині елемента
+&lt;head&gt;
+            </p>
+            <pre>
+&lt;head&gt;
+    ...
+    &lt;link rel="stylesheet" type="text/css" href="styles.css"&gt;
+    ...
+&lt;/head&gt;
+            </pre>
+            <h4>4. Правило @import</h4>
+            <p>Правило @import дозволяє імпортувати (завантажити) вміст CSS-файлу в поточну стильову таблицю.</p>
+            <pre>
+&lt;style type="text/css"&gt;
+    @import url(styles/reset.css);
+    @import url(styles/form.css);
+    ...
+    p {
+        color: #333333;
+        text-align: justify;
+    }
+    ...
+&lt;/style&gt;
+            </pre>
+            <h4>Підключення стилів у моїй роботі</h4>
+            <p>
+Під час розробки мого веб-додатка я використовував метод підключення стилів за допомогою тегу
+&lt;link&gt;
+. Для цього я створив окремий файл з розширенням .css, де оформив всі необхідні стилі для моїх елементів. Після цього я додав тег
+&lt;link&gt;
+у розділ
+&lt;head&gt;
+    мого HTML-документа і вказав шлях до мого файлу зі стилями у атрибуті href. Цей метод дозволив мені зберігати стилі в окремому файлі, що полегшило їх керування і редагування, а також підвищило читабельність коду моєї веб-сторінки.
+            </p>
+        </section>
+    </main>
+    <footer class="wrapper centered">
+        <p>Copyright @ 2025 Приходько Роман</p>
+    </footer>
+    <script src="../../js/loadLabList.js"></script>
+    <script src="../js/initData.js"></script>
+</body>
+</html>
