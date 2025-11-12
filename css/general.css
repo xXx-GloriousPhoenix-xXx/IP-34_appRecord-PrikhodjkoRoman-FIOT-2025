@@ -189,6 +189,7 @@ aside ul div:hover a {
     color: var(--secondary_color_3);
 }
 aside ul a {
+    display: flex;
     width: 100%;
     height: 100%;
 }
