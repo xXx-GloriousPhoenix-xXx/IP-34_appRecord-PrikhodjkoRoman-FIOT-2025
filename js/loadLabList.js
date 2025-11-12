@@ -1,9 +1,9 @@
 const loadLabList = async (currentLab) => {
-    const labCount = 9;
+    const labIndexes = [1,2,31,32,4,5,6,7,8,9];
 
     const labList = document.getElementById("lablist");
 
-    for (let labNumber = 1; labNumber <= labCount; labNumber++) {
+    for (const labNumber of labIndexes) {
         const labLink = document.createElement('a');
         labLink.href = `../../lab${labNumber}/pages/index-1.html`;
         labLink.textContent = `Практична №${labNumber}`;

@@ -106,6 +106,7 @@ ul {
     transition: 250ms;
     font-size: 1.15em;
     font-weight: bold;
+    width: 16em;
 }
 #lablist > div.not-found {
     cursor: default;
