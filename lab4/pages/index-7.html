@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../css/root.css">
+    <link rel="stylesheet" href="../../css/general.css">
+    <title>Report</title>
+</head>
+<body>
+    <header>
+        <div class="wrapper centered intro">
+            <div class="wrapper centered info">
+                <div class="wrapper centered labname">
+                    <h1>Звіти з лабораторних робіт</h1>        
+                    <h1>з дисципліни «WEB-орієнтовані технології. FrontEnd розробки»</h1>
+                </div>
+                <div class="wrapper centered author">
+                    <p>Виконавець: Студент групи ІП-34 Приходько Роман Юрійович</p>
+                </div>
+            </div>
+            <div class="wrapper centered profile">
+                <img class="profile" src="../../img/pfp.jpg" alt="pfp">
+            </div>
+        </div>
+        <nav id="lablist" class="wrapper centered"></nav>
+    </header>
+    <main>
+        <aside class="wrapper">
+            <ul>
+                <li>
+                    <div class="wrapper">
+                        <a href="index-1.html">Постановка задачі</a>
+                    </div>
+                </li>
+                <li>
+                    <div class="wrapper">
+                        <a href="index-2.html">Завдання 1</a>
+                    </div>
+                </li>
+                <li>
+                    <div class="wrapper">
+                        <a href="index-3.html">Завдання 2</a>
+                    </div>
+                </li>
+                <li>
+                    <div class="wrapper">
+                        <a href="index-4.html">Завдання 3</a>
+                    </div>
+                </li>
+                <li>
+                    <div class="wrapper">
+                        <a href="index-5.html">Завдання 4</a>
+                    </div>
+                </li>
+                <li>
+                    <div class="wrapper">
+                        <a href="index-6.html">Завдання 5</a>
+                    </div>
+                </li>
+                <li>
+                    <div class="wrapper active">
+                        <a href="index-7.html">Завдання 6</a>
+                    </div>
+                </li>
+                <li>
+                    <div class="wrapper">
+                        <a href="index-8.html">Завдання 7</a>
+                    </div>
+                </li>
+                <li>
+                    <div class="wrapper">
+                        <a href="index-9.html">Завдання 8</a>
+                    </div>
+                </li>
+                <li>
+                    <div class="wrapper">
+                        <a href="index-10.html">Завдання 9</a>
+                    </div>
+                </li>
+                <li>
+                    <div class="wrapper">
+                        <a href="index-11.html">Висновки</a>
+                    </div>
+                </li>
+            </ul>
+        </aside>
+        <section class="wrapper lab-content">
+            <h3>Завдання 6</h3>
+
+            <h4>Опис завдання</h4>
+            <p>Напиши функцію під назвою makeArray, яка приймає три параметри: firstArray (масив), secondArray (масив) і maxLength (число). Функція повинна створювати новий масив, який містить усі елементи з firstArray, а потім усі елементи з secondArray.</p>
+            <p>- Якщо кількість елементів у новому масиві перевищує maxLength, функція повинна повернути копію масиву з довжиною maxLength елементів.</p>
+            <p>- В іншому випадку функція повинна повернути весь новий масив.</p>
+
+            <h4>Результат</h4>
+            <pre>
+const executeTask6 = () => {
+    let firstArray = getArray();
+    let secondArray = getArray();
+    let maxLength = parseInt(prompt("Введіть максимальну довжину нового масиву:"));
+    if (isNaN(maxLength) || maxLength <= 0) {
+        alert("Некоректне значення довжини");
+        return;
+    }
+    let newArray = makeArray(firstArray, secondArray, maxLength);
+    console.log("Отриманий масив:", newArray);
+}
+
+const getArray = () => {
+    const array = [];
+    do {
+        let input = prompt("Введіть елемент масиву\n(або залиште порожнім для завершення):");
+        if (input === "") {
+            break;
+        }
+
+        var number = parseInt(input);
+        if (isNaN(number)) {
+            alert("Некоректне значення, спробуйте ще раз.");
+            continue;
+        }
+
+        array.push(number);
+    } while (true);
+    return array;
+}
+
+const makeArray = (firstArray, secondArray, maxLength) => {
+    const newArray = [];
+    let newLength = 0;
+    for (let array of [firstArray, secondArray]) {
+        for (let i = 0; i < array.length; i++) {
+            if (newLength < maxLength) {
+                newLength++;
+                newArray.push(array[i]);
+            }
+            else {
+                return newArray;
+            }
+        }
+    }
+    return newArray;
+}
+
+const buttonTask6 = document.getElementById("task-6");
+buttonTask6.addEventListener("click", executeTask6);
+            </pre>
+
+            <h4>Демонстрація</h4>
+            <button class="task-button" id="task-6">Виконати завдання 6</button>
+
+            <h4>Скріншоти</h4>
+            <img class="result-screenshot" src="../../img/task46-screenshot.png" alt="task 6 screenshot">
+        </section>
+    </main>
+    <footer class="wrapper centered">
+        <p>Copyright @ 2025 Приходько Роман</p>
+    </footer>
+    <script src="../../js/loadLabList.js"></script>
+    <script src="../js/initData.js"></script>
+    <script src="../js/task6.js"></script>
+</body>
+</html>

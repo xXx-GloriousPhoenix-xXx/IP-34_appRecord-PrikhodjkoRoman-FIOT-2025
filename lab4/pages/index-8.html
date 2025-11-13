@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../css/root.css">
+    <link rel="stylesheet" href="../../css/general.css">
+    <title>Report</title>
+</head>
+<body>
+    <header>
+        <div class="wrapper centered intro">
+            <div class="wrapper centered info">
+                <div class="wrapper centered labname">
+                    <h1>Звіти з лабораторних робіт</h1>        
+                    <h1>з дисципліни «WEB-орієнтовані технології. FrontEnd розробки»</h1>
+                </div>
+                <div class="wrapper centered author">
+                    <p>Виконавець: Студент групи ІП-34 Приходько Роман Юрійович</p>
+                </div>
+            </div>
+            <div class="wrapper centered profile">
+                <img class="profile" src="../../img/pfp.jpg" alt="pfp">
+            </div>
+        </div>
+        <nav id="lablist" class="wrapper centered"></nav>
+    </header>
+    <main>
+        <aside class="wrapper">
+            <ul>
+                <li>
+                    <div class="wrapper">
+                        <a href="index-1.html">Постановка задачі</a>
+                    </div>
+                </li>
+                <li>
+                    <div class="wrapper">
+                        <a href="index-2.html">Завдання 1</a>
+                    </div>
+                </li>
+                <li>
+                    <div class="wrapper">
+                        <a href="index-3.html">Завдання 2</a>
+                    </div>
+                </li>
+                <li>
+                    <div class="wrapper">
+                        <a href="index-4.html">Завдання 3</a>
+                    </div>
+                </li>
+                <li>
+                    <div class="wrapper">
+                        <a href="index-5.html">Завдання 4</a>
+                    </div>
+                </li>
+                <li>
+                    <div class="wrapper">
+                        <a href="index-6.html">Завдання 5</a>
+                    </div>
+                </li>
+                <li>
+                    <div class="wrapper">
+                        <a href="index-7.html">Завдання 6</a>
+                    </div>
+                </li>
+                <li>
+                    <div class="wrapper active">
+                        <a href="index-8.html">Завдання 7</a>
+                    </div>
+                </li>
+                <li>
+                    <div class="wrapper">
+                        <a href="index-9.html">Завдання 8</a>
+                    </div>
+                </li>
+                <li>
+                    <div class="wrapper">
+                        <a href="index-10.html">Завдання 9</a>
+                    </div>
+                </li>
+                <li>
+                    <div class="wrapper">
+                        <a href="index-11.html">Висновки</a>
+                    </div>
+                </li>
+            </ul>
+        </aside>
+        <section class="wrapper lab-content">
+            <h3>Завдання 7</h3>
+
+            <h4>Опис завдання</h4>
+            <p>1. Згенерувати значення елементів одновимірного масиву за допомогою генератора псевдовипадкових чисел, задавши кількість елементів масиву з клавіатури. Знайти мінімальний за значенням елемент і записати його на початок масиву, звільнивши для нього місце шляхом зсуву елементів масиву вправо. Застосувати функції</p>
+            <p>2. Упорядкувати масив у порядку зменшення методом вибору. Надрукувати вхідний та вихідний масив. Застосувати функції</p>
+
+            <h4>Результат</h4>
+            <pre>
+const executeTask7 = () => {
+    const arrayLength = parseInt(prompt("Введіть розмір масиву:"));
+    if (isNaN(arrayLength) || arrayLength <= 0) {
+        alert("Некоректний розмір масиву.");
+        return;
+    }
+
+    const array = generateRandomArray(arrayLength);
+    console.log("Початковий масив:", array);
+    
+    performSelectionSort(array);
+    console.log("Відсортований масив:", array);
+}
+
+const performSelectionSort = (array) => {
+    const n = array.length;
+    for (let i = 0; i < n - 1; i++) { 
+        let minIndex = i; 
+        for (let j = i + 1; j < n; j++) { 
+            if (array[j] < array[minIndex]) { 
+                minIndex = j; 
+            } 
+        } 
+        if (minIndex !== i) { 
+            const temp = array[i]; 
+            array[i] = array[minIndex]; 
+            array[minIndex] = temp; 
+        } 
+    }
+}
+
+const generateRandomArray = (length) => {
+    const array = [];
+    const min = -100;
+    const max = 100;
+    for (let i = 0; i < length; i++) {
+        array.push(Math.floor(Math.random() * (max - min + 1)) + min);
+    }
+    return array;
+}
+
+const buttonTask7 = document.getElementById("task-7");
+buttonTask7.addEventListener("click", executeTask7);
+            </pre>
+
+            <h4>Демонстрація</h4>
+            <button class="task-button" id="task-7">Виконати завдання 7</button>
+
+            <h4>Скріншоти</h4>
+            <img class="result-screenshot" src="../../img/task47-screenshot.png" alt="task 7 screenshot">
+        </section>
+    </main>
+    <footer class="wrapper centered">
+        <p>Copyright @ 2025 Приходько Роман</p>
+    </footer>
+    <script src="../../js/loadLabList.js"></script>
+    <script src="../js/initData.js"></script>
+    <script src="../js/task7.js"></script>
+</body>
+</html>

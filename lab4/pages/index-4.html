@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../css/root.css">
+    <link rel="stylesheet" href="../../css/general.css">
+    <title>Report</title>
+</head>
+<body>
+    <header>
+        <div class="wrapper centered intro">
+            <div class="wrapper centered info">
+                <div class="wrapper centered labname">
+                    <h1>Звіти з лабораторних робіт</h1>        
+                    <h1>з дисципліни «WEB-орієнтовані технології. FrontEnd розробки»</h1>
+                </div>
+                <div class="wrapper centered author">
+                    <p>Виконавець: Студент групи ІП-34 Приходько Роман Юрійович</p>
+                </div>
+            </div>
+            <div class="wrapper centered profile">
+                <img class="profile" src="../../img/pfp.jpg" alt="pfp">
+            </div>
+        </div>
+        <nav id="lablist" class="wrapper centered"></nav>
+    </header>
+    <main>
+        <aside class="wrapper">
+            <ul>
+                <li>
+                    <div class="wrapper">
+                        <a href="index-1.html">Постановка задачі</a>
+                    </div>
+                </li>
+                <li>
+                    <div class="wrapper">
+                        <a href="index-2.html">Завдання 1</a>
+                    </div>
+                </li>
+                <li>
+                    <div class="wrapper">
+                        <a href="index-3.html">Завдання 2</a>
+                    </div>
+                </li>
+                <li>
+                    <div class="wrapper active">
+                        <a href="index-4.html">Завдання 3</a>
+                    </div>
+                </li>
+                <li>
+                    <div class="wrapper">
+                        <a href="index-5.html">Завдання 4</a>
+                    </div>
+                </li>
+                <li>
+                    <div class="wrapper">
+                        <a href="index-6.html">Завдання 5</a>
+                    </div>
+                </li>
+                <li>
+                    <div class="wrapper">
+                        <a href="index-7.html">Завдання 6</a>
+                    </div>
+                </li>
+                <li>
+                    <div class="wrapper">
+                        <a href="index-8.html">Завдання 7</a>
+                    </div>
+                </li>
+                <li>
+                    <div class="wrapper">
+                        <a href="index-9.html">Завдання 8</a>
+                    </div>
+                </li>
+                <li>
+                    <div class="wrapper">
+                        <a href="index-10.html">Завдання 9</a>
+                    </div>
+                </li>
+                <li>
+                    <div class="wrapper">
+                        <a href="index-11.html">Висновки</a>
+                    </div>
+                </li>
+            </ul>
+        </aside>
+        <section class="wrapper lab-content">
+            <h3>Завдання 3</h3>
+
+            <h4>Опис завдання</h4>
+            <p>Є декілька користувачів User1, User2, User3, з відповідними паролями.   (Об’явити , проініцілізувати)</p>
+            <p>Написати програмний код, який запитуватиме у користувача  логін (використати  prompt) і виводить результат в консоль браузера, використовуючи шаблонний рядок.</p>
+            <p>Після цього ввести логін користувача. Додайте перевірку введеного користувачем значення:</p>
+            <p>- якщо відвідувач вводить, наприклад,  " User1" або " User2" або" User3",  то prompt запитує пароль. У випадку вдалої ідентифікації в alert вивести « Hello, User1» або « Hello, User2»; або « Hello, User3»</p>
+            <p>- якщо нічого не ввели або натиснули Cancel, то  prompt знову просить ввести логін користувача</p>
+            <p>- в іншому випадку вивести в alert рядок " I don't know you"</p>
+
+            <h4>Результат</h4>
+            <pre>
+const executeTask3 = () => {
+    const loginPattern = /^User\d+$/;
+    const passwordPattern = /^[A-Za-z]+$/;
+
+    let login = "";
+    do {
+        login = prompt("Введіть логін: ");
+        if (login === null) {
+            continue
+        }
+        if (!loginPattern.test(login)) {
+            alert("Введіть коректний логін.");
+            continue;
+        }
+        break;
+    } while (true);
+
+    if (!checkUserExists(login)) {
+        alert("I don't know you.");
+        return;
+    }
+
+    let password = "";
+    do {
+        password = prompt("Введіть пароль: ");
+        if (password === null) {
+            continue;
+        }
+        if (!passwordPattern.test(password)) {
+            alert("Введіть коректний пароль.");
+            continue;
+        }
+        break;
+    } while (true);
+
+    if (!verifyCredentials(login, password)) {
+        alert("Невірний пароль");
+        return;
+    }
+
+    alert(`Hello, ${login}`);
+}
+
+const checkUserExists = (login) => {
+    return credentials.has(login);
+}
+const verifyCredentials = (login, password) => {
+    return credentials.get(login) === password;
+}
+
+const credentials = new Map();
+credentials.set("User1", "a");
+credentials.set("User2", "b");
+credentials.set("User3", "c");
+
+const buttonTask3 = document.getElementById("task-3");
+buttonTask3.addEventListener("click", executeTask3);
+            </pre>
+
+            <h4>Демонстрація</h4>
+            <button class="task-button" id="task-3">Виконати завдання 3</button>
+
+            <h4>Скріншоти</h4>
+            <div class="result-screenshot">
+                <img class="result-screenshot" src="../../img/task431-screenshot.png" alt="task 31 screenshot">
+                <img class="result-screenshot" src="../../img/task432-screenshot.png" alt="task 32 screenshot">
+                <img class="result-screenshot" src="../../img/task433-screenshot.png" alt="task 33 screenshot">
+            </div>
+        </section>
+    </main>
+    <footer class="wrapper centered">
+        <p>Copyright @ 2025 Приходько Роман</p>
+    </footer>
+    <script src="../../js/loadLabList.js"></script>
+    <script src="../js/initData.js"></script>
+    <script src="../js/task3.js"></script>
+</body>
+</html>

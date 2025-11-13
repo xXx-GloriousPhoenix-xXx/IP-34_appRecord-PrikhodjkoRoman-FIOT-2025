@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../css/root.css">
+    <link rel="stylesheet" href="../../css/general.css">
+    <link rel="stylesheet" href="../css/tooltip.css">
+    <title>Report</title>
+</head>
+<body>
+    <header>
+        <div class="wrapper centered intro">
+            <div class="wrapper centered info">
+                <div class="wrapper centered labname">
+                    <h1>Звіти з лабораторних робіт</h1>        
+                    <h1>з дисципліни «WEB-орієнтовані технології. FrontEnd розробки»</h1>
+                </div>
+                <div class="wrapper centered author">
+                    <p>Виконавець: Студент групи ІП-34 Приходько Роман Юрійович</p>
+                </div>
+            </div>
+            <div class="wrapper centered profile">
+                <img class="profile" src="../../img/pfp.jpg" alt="pfp">
+            </div>
+        </div>
+        <nav id="lablist" class="wrapper centered"></nav>
+    </header>
+    <main>
+        <aside class="wrapper">
+            <ul>
+                <li>
+                    <div class="wrapper">
+                        <a href="index-1.html">Постановка задачі</a>
+                    </div>
+                </li>
+                <li>
+                    <div class="wrapper">
+                        <a href="index-2.html">Завдання 1</a>
+                    </div>
+                </li>
+                <li>
+                    <div class="wrapper">
+                        <a href="index-3.html">Завдання 2</a>
+                    </div>
+                </li>
+                <li>
+                    <div class="wrapper">
+                        <a href="index-4.html">Завдання 3</a>
+                    </div>
+                </li>
+                <li>
+                    <div class="wrapper">
+                        <a href="index-5.html">Завдання 4</a>
+                    </div>
+                </li>
+                <li>
+                    <div class="wrapper">
+                        <a href="index-6.html">Завдання 5</a>
+                    </div>
+                </li>
+                <li>
+                    <div class="wrapper">
+                        <a href="index-7.html">Завдання 6</a>
+                    </div>
+                </li>
+                <li>
+                    <div class="wrapper">
+                        <a href="index-8.html">Завдання 7</a>
+                    </div>
+                </li>
+                <li>
+                    <div class="wrapper">
+                        <a href="index-9.html">Завдання 8</a>
+                    </div>
+                </li>
+                <li>
+                    <div class="wrapper active">
+                        <a href="index-10.html">Завдання 9</a>
+                    </div>
+                </li>
+                <li>
+                    <div class="wrapper">
+                        <a href="index-11.html">Висновки</a>
+                    </div>
+                </li>
+            </ul>
+        </aside>
+        <section class="wrapper lab-content">
+            <h3>Завдання 9</h3>
+
+            <h4>Опис завдання</h4>
+            <p>Надати можливість виведення спливаючої підказки при наведенні миші над текстом Web-сторінки.</p>
+            <p>Передбачити можливість створення нових підказок та їх підключення до обраного фрагменту тексту.</p>
+
+            <h4>Результат</h4>
+            <pre>
+let waitingForClick = false;
+
+const buttonTask9 = document.getElementById("task-9");
+buttonTask9.addEventListener("click", () => {
+    waitingForClick = true;
+});
+document.addEventListener("click", (e) => {
+    if (e.target.tagName === "P" && waitingForClick) {
+        waitingForClick = false;
+
+        const tooltipText = prompt("Введіть текст підказки:");
+        if (tooltipText) {
+            const wrapper = document.createElement("span");
+            wrapper.classList.add("tooltip-wrapper");
+            wrapper.setAttribute("data-tooltip", tooltipText);
+
+            const icon = document.createElement("img");
+            icon.classList.add("tooltip-icon");
+            icon.src = "../../img/tip.svg";
+            icon.alt = "Tooltip Icon";
+
+            wrapper.appendChild(icon);
+            e.target.appendChild(wrapper);
+        }
+    }    
+});
+
+            </pre>
+
+            <h4>Демонстрація</h4>
+            <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut ultrices nulla egestas quam tempus faucibus. Mauris vitae mi et ante sodales eleifend. Pellentesque vulputate ut ipsum in consequat. Phasellus non condimentum magna, at egestas odio. Aliquam tincidunt congue ultricies. Pellentesque magna nisl, ultricies ut ultricies a, tincidunt eu sapien. Phasellus pharetra magna a dui vulputate, quis sollicitudin mauris semper. Vestibulum at erat tortor. Phasellus at viverra tellus. Sed vitae orci non felis semper pharetra. Curabitur eros erat, lacinia mollis urna at, rhoncus venenatis neque. Morbi interdum nibh non commodo congue. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Aenean in viverra massa. Quisque et purus tempus, condimentum ligula sed, gravida eros. </p>
+            <p> Suspendisse potenti. Nunc dui odio, dictum eget elementum non, tristique in odio. Mauris sollicitudin, libero vel egestas tincidunt, dolor purus tempus dui, vel scelerisque elit eros at diam. Sed id convallis libero. Duis tempor dignissim rhoncus. Nulla mattis mollis velit sed congue. Nunc imperdiet suscipit porta. </p>
+            <button class="task-button" id="task-9">Виконати завдання 9</button>
+
+            <h4>Скріншоти</h4>
+            <img class="page" src="../../img/task49-screenshot.png" alt="task 9 screenshot">
+        </section>
+    </main>
+    <footer class="wrapper centered">
+        <p>Copyright @ 2025 Приходько Роман</p>
+    </footer>
+    <script src="../../js/loadLabList.js"></script>
+    <script src="../js/initData.js"></script>
+    <script src="../js/task9.js"></script>
+</body>
+</html>

@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../css/root.css">
+    <link rel="stylesheet" href="../../css/general.css">
+    <title>Report</title>
+</head>
+<body>
+    <header>
+        <div class="wrapper centered intro">
+            <div class="wrapper centered info">
+                <div class="wrapper centered labname">
+                    <h1>Звіти з лабораторних робіт</h1>        
+                    <h1>з дисципліни «WEB-орієнтовані технології. FrontEnd розробки»</h1>
+                </div>
+                <div class="wrapper centered author">
+                    <p>Виконавець: Студент групи ІП-34 Приходько Роман Юрійович</p>
+                </div>
+            </div>
+            <div class="wrapper centered profile">
+                <img class="profile" src="../../img/pfp.jpg" alt="pfp">
+            </div>
+        </div>
+        <nav id="lablist" class="wrapper centered"></nav>
+    </header>
+    <main>
+        <aside class="wrapper">
+            <ul>
+                <li>
+                    <div class="wrapper">
+                        <a href="index-1.html">Постановка задачі</a>
+                    </div>
+                </li>
+                <li>
+                    <div class="wrapper">
+                        <a href="index-2.html">Завдання 1</a>
+                    </div>
+                </li>
+                <li>
+                    <div class="wrapper">
+                        <a href="index-3.html">Завдання 2</a>
+                    </div>
+                </li>
+                <li>
+                    <div class="wrapper">
+                        <a href="index-4.html">Завдання 3</a>
+                    </div>
+                </li>
+                <li>
+                    <div class="wrapper">
+                        <a href="index-5.html">Завдання 4</a>
+                    </div>
+                </li>
+                <li>
+                    <div class="wrapper active">
+                        <a href="index-6.html">Завдання 5</a>
+                    </div>
+                </li>
+                <li>
+                    <div class="wrapper">
+                        <a href="index-7.html">Завдання 6</a>
+                    </div>
+                </li>
+                <li>
+                    <div class="wrapper">
+                        <a href="index-8.html">Завдання 7</a>
+                    </div>
+                </li>
+                <li>
+                    <div class="wrapper">
+                        <a href="index-9.html">Завдання 8</a>
+                    </div>
+                </li>
+                <li>
+                    <div class="wrapper">
+                        <a href="index-10.html">Завдання 9</a>
+                    </div>
+                </li>
+                <li>
+                    <div class="wrapper">
+                        <a href="index-11.html">Висновки</a>
+                    </div>
+                </li>
+            </ul>
+        </aside>
+        <section class="wrapper lab-content">
+            <h3>Завдання 5</h3>
+
+            <h4>Опис завдання</h4>
+            <p>Оголоси функцію makeTransaction(quantity, pricePerDroid, customerCredits), яка складає та повертає повідомлення про купівлю ремонтних дроїдів.</p>
+            <p>Вона оголошує три параметри, значення яких будуть задаватися під час її виклику:</p>
+            <p>- quantity — кількість замовлених дроїдів</p>
+            <p>- pricePerDroid — ціна одного дроїда</p>
+            <p>- customerCredits — сума коштів на рахунку клієнта</p>
+            <p>Доповни функцію таким чином:</p>
+            <p>Оголоси змінну для зберігання загальної суми замовлення (загальна вартість усіх замовлених дроїдів) і задай їй вираз розрахунку цієї суми.</p>
+            <p>Додай перевірку, чи зможе клієнт оплатити замовлення:</p>
+            <p>- якщо сума до сплати перевищує кількість кредитів на рахунку клієнта, функція має повертати рядок "Insufficient funds!"</p>
+            <p>- в іншому випадку функція має повертати рядок "You ordered &ltquantity&gt droids worth &lttotalPrice&gt credits!", де &ltquantity&gt це кількість замовлених дроїдів, а <totalPrice> це їх загальна вартість.</p>
+
+            <h4>Результат</h4>
+            <pre>
+let totalSpent = 0;
+
+const executeTask5 = () => {
+    let quantity = parseInt(prompt("Введіть кількість дроідів:"));
+    if (isNaN(quantity) || quantity < 0) {
+        alert("Некоректна кількість дроідів");
+        return;
+    }
+
+    let pricePerDroid = parseInt(prompt("Введіть ціну за один дроїд:"));
+    if (isNaN(pricePerDroid) || pricePerDroid < 0) {
+        alert("Некоректна ціна за дроїд");
+        return;
+    }
+
+    let customerCredits = parseInt(prompt("Введіть кількість кредитів у покупця:"));
+    if (isNaN(customerCredits) || customerCredits < 0) {
+        alert("Некоректна кількість кредитів");
+        return;
+    }
+
+    let message = makeTransaction(quantity, pricePerDroid, customerCredits);
+    console.log(message);
+    console.log(`Загальна сума витрат: ${totalSpent}`);
+}
+
+const makeTransaction = (quantity, pricePerDroid, customerCredits) => {
+    const totalPrice = quantity * pricePerDroid;
+    if (customerCredits < totalPrice) {
+        return "Insufficient funds!";
+    }
+    else {
+        totalSpent += totalPrice;
+        return `You ordered ${quantity} droids worth ${totalPrice} credits!"`;
+    }
+}
+
+const buttonTask5 = document.getElementById("task-5");
+buttonTask5.addEventListener("click", executeTask5);
+            </pre>
+
+            <h4>Демонстрація</h4>
+            <button class="task-button" id="task-5">Виконати завдання 5</button>
+
+            <h4>Скріншоти</h4>
+            <div class="result-screenshot">
+                <img class="result-screenshot" src="../../img/task451-screenshot.png" alt="task 51 screenshot">
+                <img class="result-screenshot" src="../../img/task452-screenshot.png" alt="task 52 screenshot">
+            </div>
+        </section>
+    </main>
+    <footer class="wrapper centered">
+        <p>Copyright @ 2025 Приходько Роман</p>
+    </footer>
+    <script src="../../js/loadLabList.js"></script>
+    <script src="../js/initData.js"></script>
+    <script src="../js/task5.js"></script>
+</body>
+</html>

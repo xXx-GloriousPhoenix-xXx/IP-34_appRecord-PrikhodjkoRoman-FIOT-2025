@@ -1,0 +1,63 @@
+html, body {
+    margin: 0;
+}
+
+.wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2em;
+}
+.wrapper button {
+    width: 18em;
+    height: 2em;
+    font-size: 1.5em;
+    background-color: white;
+    color: royalblue;
+    border: 0.1em solid royalblue;
+    border-radius: 1em;
+    transition: 250ms;
+}
+.wrapper button:hover {
+    background-color: royalblue;
+    color: white;
+    cursor: pointer;
+}
+.control {
+    flex-flow: row wrap;
+    gap: 2em;
+}
+.text {
+    flex-flow: column nowrap;
+}
+.text p {
+    margin: 0.25em;
+}
+.tooltip-wrapper {
+    width: 1em;
+    position: relative;
+    left: 0.25em;
+    margin: 0.25em;
+}
+.tooltip-icon {
+    width: 1em;
+}
+.tooltip-wrapper::after {
+    position: absolute;
+    bottom: 150%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: black;
+    color: white;
+    padding: 0.25em 0.5em;
+    border-radius: 0.25em;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 250ms;
+    white-space: nowrap;
+    content: attr(data-tooltip);
+}
+
+.tooltip-wrapper:hover::after {
+    opacity: 1;
+}

@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../css/root.css">
+    <link rel="stylesheet" href="../../css/general.css">
+    <title>Report</title>
+</head>
+<body>
+    <header>
+        <div class="wrapper centered intro">
+            <div class="wrapper centered info">
+                <div class="wrapper centered labname">
+                    <h1>Звіти з лабораторних робіт</h1>        
+                    <h1>з дисципліни «WEB-орієнтовані технології. FrontEnd розробки»</h1>
+                </div>
+                <div class="wrapper centered author">
+                    <p>Виконавець: Студент групи ІП-34 Приходько Роман Юрійович</p>
+                </div>
+            </div>
+            <div class="wrapper centered profile">
+                <img class="profile" src="../../img/pfp.jpg" alt="pfp">
+            </div>
+        </div>
+        <nav id="lablist" class="wrapper centered"></nav>
+    </header>
+    <main>
+        <aside class="wrapper">
+            <ul>
+                <li>
+                    <div class="wrapper">
+                        <a href="index-1.html">Постановка задачі</a>
+                    </div>
+                </li>
+                <li>
+                    <div class="wrapper">
+                        <a href="index-2.html">Завдання 1</a>
+                    </div>
+                </li>
+                <li>
+                    <div class="wrapper">
+                        <a href="index-3.html">Завдання 2</a>
+                    </div>
+                </li>
+                <li>
+                    <div class="wrapper">
+                        <a href="index-4.html">Завдання 3</a>
+                    </div>
+                </li>
+                <li>
+                    <div class="wrapper active">
+                        <a href="index-5.html">Завдання 4</a>
+                    </div>
+                </li>
+                <li>
+                    <div class="wrapper">
+                        <a href="index-6.html">Завдання 5</a>
+                    </div>
+                </li>
+                <li>
+                    <div class="wrapper">
+                        <a href="index-7.html">Завдання 6</a>
+                    </div>
+                </li>
+                <li>
+                    <div class="wrapper">
+                        <a href="index-8.html">Завдання 7</a>
+                    </div>
+                </li>
+                <li>
+                    <div class="wrapper">
+                        <a href="index-9.html">Завдання 8</a>
+                    </div>
+                </li>
+                <li>
+                    <div class="wrapper">
+                        <a href="index-10.html">Завдання 9</a>
+                    </div>
+                </li>
+                <li>
+                    <div class="wrapper">
+                        <a href="index-11.html">Висновки</a>
+                    </div>
+                </li>
+            </ul>
+        </aside>
+        <section class="wrapper lab-content">
+            <h3>Завдання 4</h3>
+
+            <h4>Опис завдання</h4>
+            <p>Оголоси функцію getShippingMessage, яка очікує три параметри, значення яких будуть задаватися під час її виклику:</p>
+            <p>• country — перший параметр, рядок, що містить країну доставки</p>
+            <p>• price — другий параметр, число, що містить загальну вартість товару</p>
+            <p>• deliveryFee — третій параметр, число, що містить вартість доставки товару</p>
+            <p>Напиши  код функції так, щоб вона повертала рядок з повідомленням про доставку товару в країну користувача: "Shipping to &ltcountry&gt will cost &lttotalPrice&gt credits", де:</p>
+            <p>• &ltcountry&gt — це країни доставки</p>
+            <p>• &lttotalPrice&gt — це загальна вартість замовлення, що включає вартість товару і його доставки</p>
+
+            <h4>Результат</h4>
+            <pre>
+const executeTask4 = () => {
+    let country = prompt("Введість країну для доставки:");
+
+    let price = parseInt(prompt("Введість вартість товару:"));
+    if (isNaN(price)) {
+        alert("Некоректна вартість товару");
+        return;
+    }
+    
+    let deliveryFee = parseInt(prompt("Введість вартість доставки:"));
+    if (isNaN(deliveryFee)) {
+        alert("Некоректна вартість доставки");
+        return;
+    }
+
+    let message = getShippingMessage(country, price, deliveryFee);
+    console.log(message);
+}
+
+const getShippingMessage = (country, price, deliveryFee) => {
+    let totalPrice = price + deliveryFee;
+    return `Shipping to ${country} will cost ${totalPrice} credits`;
+}
+
+const buttonTask4 = document.getElementById("task-4");
+buttonTask4.addEventListener("click", executeTask4);
+            </pre>
+
+            <h4>Демонстрація</h4>
+            <button class="task-button" id="task-4">Виконати завдання 4</button>
+
+            <h4>Скріншоти</h4>
+            <img class="result-screenshot" src="../../img/task44-screenshot.png" alt="task 4 screenshot">
+        </section>
+    </main>
+    <footer class="wrapper centered">
+        <p>Copyright @ 2025 Приходько Роман</p>
+    </footer>
+    <script src="../../js/loadLabList.js"></script>
+    <script src="../js/initData.js"></script>
+    <script src="../js/task4.js"></script>
+</body>
+</html>
