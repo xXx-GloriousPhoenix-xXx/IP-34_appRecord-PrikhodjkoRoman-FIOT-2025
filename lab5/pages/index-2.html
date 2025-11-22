@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../css/root.css">
+    <link rel="stylesheet" href="../../css/general.css">
+    <title>Report</title>
+</head>
+<body>
+    <header>
+        <div class="wrapper centered intro">
+            <div class="wrapper centered info">
+                <div class="wrapper centered labname">
+                    <h1>Звіти з лабораторних робіт</h1>        
+                    <h1>з дисципліни «WEB-орієнтовані технології. FrontEnd розробки»</h1>
+                </div>
+                <div class="wrapper centered author">
+                    <p>Виконавець: Студент групи ІП-34 Приходько Роман Юрійович</p>
+                </div>
+            </div>
+            <div class="wrapper centered profile">
+                <img class="profile" src="../../img/pfp.jpg" alt="pfp">
+            </div>
+        </div>
+        <nav id="lablist" class="wrapper centered"></nav>
+    </header>
+    <main>
+        <aside class="wrapper">
+            <ul>
+                <li>
+                    <div class="wrapper">
+                        <a href="index-1.html">Постановка задачі</a>
+                    </div>
+                </li>
+                <li>
+                    <div class="wrapper active">
+                        <a href="index-2.html">Завдання 1-2</a>
+                    </div>
+                </li>
+                <li>
+                    <div class="wrapper">
+                        <a href="index-3.html">Завдання 1-4</a>
+                    </div>
+                </li>
+                <li>
+                    <div class="wrapper">
+                        <a href="index-4.html">Завдання 1-6</a>
+                    </div>
+                </li>
+                <li>
+                    <div class="wrapper">
+                        <a href="index-5.html">Завдання 1-8</a>
+                    </div>
+                </li>
+                <li>
+                    <div class="wrapper">
+                        <a href="index-6.html">Завдання 1-9</a>
+                    </div>
+                </li>
+                <li>
+                    <div class="wrapper">
+                        <a href="index-7.html">Завдання 1-10</a>
+                    </div>
+                </li>
+                <li>
+                    <div class="wrapper">
+                        <a href="index-8.html">Завдання 2-2</a>
+                    </div>
+                </li>
+                <li>
+                    <div class="wrapper">
+                        <a href="index-9.html">Завдання 2-4</a>
+                    </div>
+                </li>
+                <li>
+                    <div class="wrapper">
+                        <a href="index-10.html">Завдання 2-6</a>
+                    </div>
+                </li>
+                <li>
+                    <div class="wrapper">
+                        <a href="index-11.html">Завдання 2-7</a>
+                    </div>
+                </li>
+                <li>
+                    <div class="wrapper">
+                        <a href="index-12.html">Висновки</a>
+                    </div>
+                </li>
+            </ul>
+        </aside>
+        <section class="wrapper lab-content">
+            <h3>Завдання</h3>
+            <p>
+                Напишіть функцію getProductDetails, яка приймає ідентифікатор товару productId та дві колбек-функції successCallback та errorCallback.
+                <br>
+                // Функція getProductDetails повинна отримати деталі про вказаний товар та передати їх у successCallback.
+                <br> 
+                // У випадку якщо товар не знайдено, викликається errorCallback і передається повідомлення про помилку.
+            </p>
+            <h3>Код</h3>
+            <pre>
+const executeTask_1_2 = () => {
+    const id = parseInt(prompt("Введіть ID продукту"));
+    if (isNaN(id) || id &lt;= 0) {
+        console.log("Некоректний ID продукту");
+        return;
+    }
+    getProductDetails(id, successFunction, errorFunction);
+}
+
+const getProductDetails = (productId, successCallback, errorCallback) => {
+    const product = productData[productId];
+    if (product) {
+        successCallback(product);
+    }
+    else {
+        errorCallback();
+    }
+}
+
+const successFunction = (product) => {
+    const data = Object.keys(product)
+        .map(key => `${key}: ${product[key]}`)
+        .join('\n');
+    console.log(data);
+}
+
+const errorFunction = () => {
+    console.log("Product not found");
+}
+
+const productData = {
+    1: { name: "Laptop", price: 999.99, stock: 25 },
+    2: { name: "Smartphone", price: 499.99, stock: 50 },
+    3: { name: "Tablet", price: 299.99, stock: 30 }
+}
+
+document.getElementById("task-1-2").addEventListener("click", executeTask_1_2);
+            </pre>
+            <button class="task-button" id="task-1-2">Виконати</button>
+        </section>
+    </main>
+    <footer class="wrapper centered">
+        <p>Copyright @ 2025 Приходько Роман</p>
+    </footer>
+    <script src="../../js/loadLabList.js"></script>
+    <script src="../js/initData.js"></script>
+    <script src="../js/task_1_2.js"></script>
+</body>
+</html>

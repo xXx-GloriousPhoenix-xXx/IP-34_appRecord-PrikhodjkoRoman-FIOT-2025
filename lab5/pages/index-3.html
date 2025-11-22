@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../css/root.css">
+    <link rel="stylesheet" href="../../css/general.css">
+    <title>Report</title>
+</head>
+<body>
+    <header>
+        <div class="wrapper centered intro">
+            <div class="wrapper centered info">
+                <div class="wrapper centered labname">
+                    <h1>Звіти з лабораторних робіт</h1>        
+                    <h1>з дисципліни «WEB-орієнтовані технології. FrontEnd розробки»</h1>
+                </div>
+                <div class="wrapper centered author">
+                    <p>Виконавець: Студент групи ІП-34 Приходько Роман Юрійович</p>
+                </div>
+            </div>
+            <div class="wrapper centered profile">
+                <img class="profile" src="../../img/pfp.jpg" alt="pfp">
+            </div>
+        </div>
+        <nav id="lablist" class="wrapper centered"></nav>
+    </header>
+    <main>
+        <aside class="wrapper">
+            <ul>
+                <li>
+                    <div class="wrapper">
+                        <a href="index-1.html">Постановка задачі</a>
+                    </div>
+                </li>
+                <li>
+                    <div class="wrapper">
+                        <a href="index-2.html">Завдання 1-2</a>
+                    </div>
+                </li>
+                <li>
+                    <div class="wrapper active">
+                        <a href="index-3.html">Завдання 1-4</a>
+                    </div>
+                </li>
+                <li>
+                    <div class="wrapper">
+                        <a href="index-4.html">Завдання 1-6</a>
+                    </div>
+                </li>
+                <li>
+                    <div class="wrapper">
+                        <a href="index-5.html">Завдання 1-8</a>
+                    </div>
+                </li>
+                <li>
+                    <div class="wrapper">
+                        <a href="index-6.html">Завдання 1-9</a>
+                    </div>
+                </li>
+                <li>
+                    <div class="wrapper">
+                        <a href="index-7.html">Завдання 1-10</a>
+                    </div>
+                </li>
+                <li>
+                    <div class="wrapper">
+                        <a href="index-8.html">Завдання 2-2</a>
+                    </div>
+                </li>
+                <li>
+                    <div class="wrapper">
+                        <a href="index-9.html">Завдання 2-4</a>
+                    </div>
+                </li>
+                <li>
+                    <div class="wrapper">
+                        <a href="index-10.html">Завдання 2-6</a>
+                    </div>
+                </li>
+                <li>
+                    <div class="wrapper">
+                        <a href="index-11.html">Завдання 2-7</a>
+                    </div>
+                </li>
+                <li>
+                    <div class="wrapper">
+                        <a href="index-12.html">Висновки</a>
+                    </div>
+                </li>
+            </ul>
+        </aside>
+        <section class="wrapper lab-content">
+            <h3>Завдання</h3>
+            <p>
+                З об'єкту concerts отримати масив, який буде містити лише імена міст. <br>
+  З масиву потрібно прибрати міста, в яких концерт  уже пройшов і   відсортувати їх у хронологічному порядку. <br>
+  Результат вивести у консоль.<br>
+  Очікуваний результат ["Одеса", "Умань", "Харків"]<br>
+Застосувати стрілочні функції<br>
+const concerts = {<br>
+    Київ: new Date("2020-04-01"),<br>
+    Умань: new Date("2025-07-02"),<br>
+    Вінниця: new Date("2020-04-21"),<br>
+    Одеса: new Date("2025-03-15"),<br>
+    Хмельницький: new Date("2020-04-18"),<br>
+    Харків: new Date("2025-07-10"),<br>
+};
+            </p>
+            <h3>Код</h3>
+            <pre>
+const concerts = {
+    Київ: new Date("2020-04-01"),
+    Умань: new Date("2025-07-02"),
+    Вінниця: new Date("2020-04-21"),
+    Одеса: new Date("2025-03-15"),
+    Хмельницький: new Date("2020-04-18"),
+    Харків: new Date("2025-07-10"),
+};
+
+const executeTask_1_4 = () => {
+    const input = prompt("Введіть дату у форматі ДД/ММ/РРРР:");
+    const pattern = /^(?:(?:(?:0[1-9]|1\d|2[0-8])\/(?:0[1-9]|1[0-2])|(?:29|30)\/(?:0[13-9]|1[0-2])|31\/(?:0[13578]|1[02]))\/\d{4}|29\/02\/(?:\d{2}(?:0[48]|[2468][048]|[13579][26])|(?:[02468][048]|[13579][26])00))$/;
+    if (!pattern.test(input)) {
+        alert("Невірний формат дати.");
+        return;
+    }
+    const [day, month, year] = input.split("/").map(Number);
+    const date = new Date(year, month - 1, day);
+
+    const concertsArray = Object.entries(concerts).map(([city, date]) => ({ city, date }));
+    const outdatedConcertCityNames = concertsArray
+    .filter(c => c.date < date)
+    .sort((a, b) => a.date - b.date)
+    .map(c => c.city);
+
+    console.log("Міста з концертами до введеної дати:", outdatedConcertCityNames);
+}
+
+document.getElementById("task-1-4").addEventListener("click", executeTask_1_4);
+            </pre>
+            <button class="task-button" id="task-1-4">Виконати</button>
+        </section>
+    </main>
+    <footer class="wrapper centered">
+        <p>Copyright @ 2025 Приходько Роман</p>
+    </footer>
+    <script src="../../js/loadLabList.js"></script>
+    <script src="../js/initData.js"></script>
+    <script src="../js/task_1_4.js"></script>
+</body>
+</html>

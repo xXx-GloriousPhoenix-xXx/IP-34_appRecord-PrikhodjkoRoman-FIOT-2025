@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../css/root.css">
+    <link rel="stylesheet" href="../../css/general.css">
+    <title>Report</title>
+</head>
+<body>
+    <header>
+        <div class="wrapper centered intro">
+            <div class="wrapper centered info">
+                <div class="wrapper centered labname">
+                    <h1>Звіти з лабораторних робіт</h1>        
+                    <h1>з дисципліни «WEB-орієнтовані технології. FrontEnd розробки»</h1>
+                </div>
+                <div class="wrapper centered author">
+                    <p>Виконавець: Студент групи ІП-34 Приходько Роман Юрійович</p>
+                </div>
+            </div>
+            <div class="wrapper centered profile">
+                <img class="profile" src="../../img/pfp.jpg" alt="pfp">
+            </div>
+        </div>
+        <nav id="lablist" class="wrapper centered"></nav>
+    </header>
+    <main>
+        <aside class="wrapper">
+            <ul>
+                <li>
+                    <div class="wrapper">
+                        <a href="index-1.html">Постановка задачі</a>
+                    </div>
+                </li>
+                <li>
+                    <div class="wrapper">
+                        <a href="index-2.html">Завдання 1-2</a>
+                    </div>
+                </li>
+                <li>
+                    <div class="wrapper">
+                        <a href="index-3.html">Завдання 1-4</a>
+                    </div>
+                </li>
+                <li>
+                    <div class="wrapper">
+                        <a href="index-4.html">Завдання 1-6</a>
+                    </div>
+                </li>
+                <li>
+                    <div class="wrapper">
+                        <a href="index-5.html">Завдання 1-8</a>
+                    </div>
+                </li>
+                <li>
+                    <div class="wrapper">
+                        <a href="index-6.html">Завдання 1-9</a>
+                    </div>
+                </li>
+                <li>
+                    <div class="wrapper">
+                        <a href="index-7.html">Завдання 1-10</a>
+                    </div>
+                </li>
+                <li>
+                    <div class="wrapper">
+                        <a href="index-8.html">Завдання 2-2</a>
+                    </div>
+                </li>
+                <li>
+                    <div class="wrapper">
+                        <a href="index-9.html">Завдання 2-4</a>
+                    </div>
+                </li>
+                <li>
+                    <div class="wrapper active">
+                        <a href="index-10.html">Завдання 2-6</a>
+                    </div>
+                </li>
+                <li>
+                    <div class="wrapper">
+                        <a href="index-11.html">Завдання 2-7</a>
+                    </div>
+                </li>
+                <li>
+                    <div class="wrapper">
+                        <a href="index-12.html">Висновки</a>
+                    </div>
+                </li>
+            </ul>
+        </aside>
+        <section class="wrapper lab-content">
+            <h3>Завдання</h3>
+            <p>
+ Відсортуйте масив об'єктів за віком у порядку зростання.<br>
+// Очікуваний результат: [{name: "Bob", age: 19}, {name: "John", age: 27}, {name: "Jane", age: 31}].<br><br>
+
+//const users = [<br>
+//  { name: 'John', age: 27 },<br>
+//  { name: 'Jane', age: 31 },<br>
+//  { name: 'Bob', age: 19 },<br>
+// ];
+            </p>
+            <h3>Код</h3>
+            <pre>
+const users = [
+    { name: 'John', age: 27 },
+    { name: 'Jane', age: 31 },
+    { name: 'Bob', age: 19 },
+];
+
+const sortAscendingByAge = () => {
+    return users.slice().sort((a, b) => a.age - b.age);
+}
+
+const executeTask_2_6 = () => {
+    console.log("Початковий масив користувачів:", users);
+    const sortedUsers = sortAscendingByAge();
+    console.log("Відсортований масив користувачів за віком (за зростанням):", sortedUsers);
+}
+
+document.getElementById("task-2-6").addEventListener("click", executeTask_2_6);
+            </pre>
+            <button class="task-button" id="task-2-6">Виконати</button>
+        </section>
+    </main>
+    <footer class="wrapper centered">
+        <p>Copyright @ 2025 Приходько Роман</p>
+    </footer>
+    <script src="../../js/loadLabList.js"></script>
+    <script src="../js/initData.js"></script>
+    <script src="../js/task_2_6.js"></script>
+</body>
+</html>

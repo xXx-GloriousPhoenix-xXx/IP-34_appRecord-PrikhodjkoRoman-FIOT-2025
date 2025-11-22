@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../css/root.css">
+    <link rel="stylesheet" href="../../css/general.css">
+    <title>Report</title>
+</head>
+<body>
+    <header>
+        <div class="wrapper centered intro">
+            <div class="wrapper centered info">
+                <div class="wrapper centered labname">
+                    <h1>Звіти з лабораторних робіт</h1>        
+                    <h1>з дисципліни «WEB-орієнтовані технології. FrontEnd розробки»</h1>
+                </div>
+                <div class="wrapper centered author">
+                    <p>Виконавець: Студент групи ІП-34 Приходько Роман Юрійович</p>
+                </div>
+            </div>
+            <div class="wrapper centered profile">
+                <img class="profile" src="../../img/pfp.jpg" alt="pfp">
+            </div>
+        </div>
+        <nav id="lablist" class="wrapper centered"></nav>
+    </header>
+    <main>
+        <aside class="wrapper">
+            <ul>
+                <li>
+                    <div class="wrapper">
+                        <a href="index-1.html">Постановка задачі</a>
+                    </div>
+                </li>
+                <li>
+                    <div class="wrapper">
+                        <a href="index-2.html">Завдання 1-2</a>
+                    </div>
+                </li>
+                <li>
+                    <div class="wrapper">
+                        <a href="index-3.html">Завдання 1-4</a>
+                    </div>
+                </li>
+                <li>
+                    <div class="wrapper">
+                        <a href="index-4.html">Завдання 1-6</a>
+                    </div>
+                </li>
+                <li>
+                    <div class="wrapper">
+                        <a href="index-5.html">Завдання 1-8</a>
+                    </div>
+                </li>
+                <li>
+                    <div class="wrapper">
+                        <a href="index-6.html">Завдання 1-9</a>
+                    </div>
+                </li>
+                <li>
+                    <div class="wrapper">
+                        <a href="index-7.html">Завдання 1-10</a>
+                    </div>
+                </li>
+                <li>
+                    <div class="wrapper">
+                        <a href="index-8.html">Завдання 2-2</a>
+                    </div>
+                </li>
+                <li>
+                    <div class="wrapper">
+                        <a href="index-9.html">Завдання 2-4</a>
+                    </div>
+                </li>
+                <li>
+                    <div class="wrapper">
+                        <a href="index-10.html">Завдання 2-6</a>
+                    </div>
+                </li>
+                <li>
+                    <div class="wrapper active">
+                        <a href="index-11.html">Завдання 2-7</a>
+                    </div>
+                </li>
+                <li>
+                    <div class="wrapper">
+                        <a href="index-12.html">Висновки</a>
+                    </div>
+                </li>
+            </ul>
+        </aside>
+        <section class="wrapper lab-content">
+            <h3>Завдання</h3>
+            <p>
+// Розроби клас Calculator, який дозволяє виконувати арифметичні <br>
+ //  операції над числом за допомогою методів класу, підтримуючи  <br>
+ // ланцюжковий виклик (method chaining).<br>
+ //<br>
+ // Вимоги до класу Calculator<br>
+ // - Метод number(value)<br>
+ // Встановлює початкове значення для наступних обчислень.<br>
+ // Повертає сам об'єкт (this) для підтримки ланцюжкових викликів.<br>
+ <br>
+ // - метод getResult, Повертає поточний результат усіх операцій.<br>
+ // Не змінює значення, просто повертає його.<br>
+ <br>
+ // - метод add - Додає value до поточного значення.<br>
+ // Повертає сам об'єкт (this) для підтримки ланцюжкових викликів.<br>
+ <br>
+ // - метод substruct - Віднімає value від поточного значення. Повертає this.<br>
+ <br>
+// - метод divide - Ділить поточне значення на value, якщо value не дорівнює 0.<br>
+// Якщо value === 0, викидає помилку з повідомленням про неможливість ділення.<br>
+// Повертає сам об'єкт (this) для підтримки ланцюжкових викликів.<br>
+ <br>
+ // - метод multiply -Множить поточне значення на value. Повертає this.<br>
+ <br>
+ // Об'єкт класу може проводити послідовні операції у вигляді ланцюжка<br>
+ <br>
+ // Приклад використання:<br>
+ // const calc = new Calculator();<br>
+<br>
+<br>
+// const result = calc<br>
+//   .number(10)   // Встановлюємо початкове значення 10<br>
+//   .add(5)       // Додаємо 5 (10 + 5 = 15)<br>
+//   .subtract(3)  // Віднімаємо 3 (15 - 3 = 12)<br>
+//   .multiply(4)  // Множимо на 4 (12 * 4 = 48)<br>
+//   .divide(2)    // Ділимо на 2 (48 / 2 = 24)<br>
+//   .getResult(); // Отримуємо результат: 24<br>
+<br>
+<br>
+//   console.log(result); // 24
+            </p>
+            <h3>Код</h3>
+            <pre>
+class Calculator {
+    constructor() {
+        this.currentValue = 0;
+    }
+
+    number(value) {
+        this.currentValue = value;
+        return this;
+    }
+
+    getResult() {
+        return this.currentValue;
+    }
+
+    add(value) {
+        this.currentValue += value;
+        return this;
+    }
+
+    subtract(value) {
+        this.currentValue -= value;
+        return this;
+    }
+
+    multiply(value) {
+        this.currentValue *= value;
+        return this;
+    }
+
+    divide(value) {
+        if (value === 0) {
+            throw new Error("Division by zero is not allowed");
+        }
+        this.currentValue /= value;
+        return this;
+    }
+
+    power(value) {
+        this.currentValue **= value;
+        return this;
+    }
+}
+
+const executeTask_2_7 = () => {
+    try {
+        const operation = prompt("Введіть послідовність операцій\nНаприклад: new Calculator().number(10).add(5).subtract(3)");
+        
+        if (!operation) {
+            alert("Операція не введена");
+            return;
+        }
+
+        const result = eval(operation).getResult();
+        
+        alert(`Результат: ${result}`);
+        
+    } catch (error) {
+        alert(`Помилка: ${error.message}`);
+    }
+
+}
+
+document.getElementById("task-2-7").addEventListener("click", executeTask_2_7);
+            </pre>
+            <button class="task-button" id="task-2-7">Виконати</button>
+        </section>
+    </main>
+    <footer class="wrapper centered">
+        <p>Copyright @ 2025 Приходько Роман</p>
+    </footer>
+    <script src="../../js/loadLabList.js"></script>
+    <script src="../js/initData.js"></script>
+    <script src="../js/task_2_7.js"></script>
+</body>
+</html>
