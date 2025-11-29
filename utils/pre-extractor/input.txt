@@ -1,43 +1,10 @@
-@media screen and (min-width: 1025px) and (max-width: 1366px) {
-    html {
-        font-size: 1.1dvw;
-    }
-    p {
-        font-size: 1.25em;
-    }
-    main > section {
-        padding: 0 10em;
-    }
-}
-
-@media screen and (min-width: 1025px) {
-    main {
-        height: 80dvh;
-
-        overflow-y: scroll;
-        scroll-snap-type: y mandatory;
-        scroll-behavior: smooth;
-
-        scrollbar-width: thin;
-        scrollbar-color: var(--normal_col) var(--dark_col);
-    }
-    main > section {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-flow: column nowrap;
-    
-        height: 100%;
-        background-color: var(--normal_col);
-    
-        scroll-snap-align: start;
-    }
-    body {
-        overflow-y: hidden;
-    }
-} 
-@media screen and (min-width: 1367px) {
-    main > section {
-        padding: 0 20em;
-    }
-}
+&lt;div id="modal"&gt;
+    &lt;div class="description"&gt;
+        &lt;img src="#" alt="#"&gt;
+        &lt;div&gt;
+            &lt;h2&gt;&lt;/h2&gt;
+            &lt;div&gt;&lt;/div&gt;
+        &lt;/div&gt;
+        &lt;span id="close-modal"&gt;🗙&lt;/span&gt;
+    &lt;/div&gt;
+&lt;/div&gt;

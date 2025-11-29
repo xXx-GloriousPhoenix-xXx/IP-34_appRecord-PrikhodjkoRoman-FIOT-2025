@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../css/root.css">
+    <link rel="stylesheet" href="../../css/general.css">
+    <title>Report</title>
+</head>
+<body>
+    <header>
+        <div class="wrapper centered intro">
+            <div class="wrapper centered info">
+                <div class="wrapper centered labname">
+                    <h1>Звіти з лабораторних робіт</h1>        
+                    <h1>з дисципліни «WEB-орієнтовані технології. FrontEnd розробки»</h1>
+                </div>
+                <div class="wrapper centered author">
+                    <p>Виконавець: Студент групи ІП-34 Приходько Роман Юрійович</p>
+                </div>
+            </div>
+            <div class="wrapper centered profile">
+                <img class="profile" src="../../img/pfp.jpg" alt="pfp">
+            </div>
+        </div>
+        <nav id="lablist" class="wrapper centered"></nav>
+    </header>
+    <main>
+        <aside class="wrapper">
+            <ul>
+                <li>
+                    <div class="wrapper">
+                        <a href="index-1.html">Постановка задачі</a>
+                    </div>
+                </li>
+                <li>
+                    <div class="wrapper active">
+                        <a href="index-2.html">Модальне вікно</a> 
+                    </div>
+                </li>
+                <li>
+                    <div class="wrapper">
+                        <a href="index-3.html">Завдання</a> 
+                    </div>
+                </li>
+                <li>
+                    <div class="wrapper sub">
+                        <a href="index-3.html">Завдання 2</a> 
+                    </div>
+                </li>
+                <li>
+                    <div class="wrapper sub">
+                        <a href="index-4.html">Завдання 4</a> 
+                    </div>
+                </li>
+                <li>
+                    <div class="wrapper sub">
+                        <a href="index-5.html">Завдання 6</a> 
+                    </div>
+                </li>
+                <li>
+                    <div class="wrapper sub">
+                        <a href="index-6.html">Завдання 7</a> 
+                    </div>
+                </li>
+                <li>
+                    <div class="wrapper sub">
+                        <a href="index-7.html">Завдання 8</a> 
+                    </div>
+                </li>
+                <li>
+                    <div class="wrapper sub">
+                        <a href="index-8.html">Завдання 9</a> 
+                    </div>
+                </li>
+                <li>
+                    <div class="wrapper sub">
+                        <a href="index-9.html">Завдання 10</a> 
+                    </div>
+                </li>
+
+                <li>
+                    <div class="wrapper">
+                        <a href="index-10.html">Висновки</a>
+                    </div>
+                </li>
+            </ul>
+        </aside>
+        <section class="wrapper lab-content">
+            <h2>Модальне вікно</h2>
+            <h4>Завдання</h4>
+            <img class="task-screenshot" src="../img/modal/task.png" alt="task">
+
+            <h4>HTML код вікна</h4>
+            <pre>
+&lt;div id="modal"&gt;
+    &lt;div class="description"&gt;
+        &lt;img src="#" alt="#"&gt;
+        &lt;div&gt;
+            &lt;h2&gt;&lt;/h2&gt;
+            &lt;div&gt;&lt;/div&gt;
+        &lt;/div&gt;
+        &lt;span id="close-modal"&gt;🗙&lt;/span&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+            </pre>
+            <h4>JS-код вікна</h4>
+            <pre>
+const setModalContent = (plant) => {
+    plantImage.src = `./img/${plant.image}`;
+    plantImage.alt = plant.name;
+    plantName.textContent = plant.name;
+
+    // Clear previous description
+    plantDescriptionList.innerHTML = '';
+
+    plant.description.forEach(desc => {
+        const descItem = document.createElement('p');
+        descItem.textContent = desc;
+        plantDescriptionList.appendChild(descItem);
+    });
+}
+
+const showModal = (state) => {
+    if (state) {
+        modal.style.display = "flex";
+    }
+    else {
+        modal.style.display = "none";
+    }
+}
+
+closeModal.addEventListener('click', () => showModal(false));
+            </pre>
+            <h4>Результат</h4>
+            <img class="page" src="../img/modal/default.png" alt="default">
+            <img class="page" src="../img/modal/modal.png" alt="modal">
+        </section>
+    </main>
+    <footer class="wrapper centered">
+        <p>Copyright @ 2025 Приходько Роман</p>
+    </footer>
+    <script src="../../js/loadLabList.js"></script>
+    <script src="../js/initData.js"></script>
+</body>
+</html>

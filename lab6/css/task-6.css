@@ -1,0 +1,10 @@
+#double-list {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: start;
+    width: 100%;
+    list-style-type: disc;
+}
+#double-list li {
+    margin-left: 1.5em;
+}

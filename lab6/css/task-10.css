@@ -1,0 +1,14 @@
+#boxes {
+    display: flex;
+    flex-flow: row wrap;
+    gap: 1em;
+}
+.box {
+    border: 0.15em dashed var(--primary_color);
+    border-radius: 1em;
+}
+#controls {
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 1em;
+}

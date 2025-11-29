@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../css/root.css">
+    <link rel="stylesheet" href="../../css/general.css">
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../css/task-10.css">
+    <title>Report</title>
+</head>
+<body>
+    <header>
+        <div class="wrapper centered intro">
+            <div class="wrapper centered info">
+                <div class="wrapper centered labname">
+                    <h1>Звіти з лабораторних робіт</h1>        
+                    <h1>з дисципліни «WEB-орієнтовані технології. FrontEnd розробки»</h1>
+                </div>
+                <div class="wrapper centered author">
+                    <p>Виконавець: Студент групи ІП-34 Приходько Роман Юрійович</p>
+                </div>
+            </div>
+            <div class="wrapper centered profile">
+                <img class="profile" src="../../img/pfp.jpg" alt="pfp">
+            </div>
+        </div>
+        <nav id="lablist" class="wrapper centered"></nav>
+    </header>
+    <main>
+        <aside class="wrapper">
+            <ul>
+                <li>
+                    <div class="wrapper">
+                        <a href="index-1.html">Постановка задачі</a>
+                    </div>
+                </li>
+                <li>
+                    <div class="wrapper">
+                        <a href="index-2.html">Модальне вікно</a> 
+                    </div>
+                </li>
+                <li>
+                    <div class="wrapper">
+                        <a href="index-3.html">Завдання</a> 
+                    </div>
+                </li>
+                <li>
+                    <div class="wrapper sub">
+                        <a href="index-3.html">Завдання 2</a> 
+                    </div>
+                </li>
+                <li>
+                    <div class="wrapper sub">
+                        <a href="index-4.html">Завдання 4</a> 
+                    </div>
+                </li>
+                <li>
+                    <div class="wrapper sub">
+                        <a href="index-5.html">Завдання 6</a> 
+                    </div>
+                </li>
+                <li>
+                    <div class="wrapper sub">
+                        <a href="index-6.html">Завдання 7</a> 
+                    </div>
+                </li>
+                <li>
+                    <div class="wrapper sub">
+                        <a href="index-7.html">Завдання 8</a> 
+                    </div>
+                </li>
+                <li>
+                    <div class="wrapper sub">
+                        <a href="index-8.html">Завдання 9</a> 
+                    </div>
+                </li>
+                <li>
+                    <div class="wrapper sub active">
+                        <a href="index-9.html">Завдання 10</a> 
+                    </div>
+                </li>
+
+                <li>
+                    <div class="wrapper">
+                        <a href="index-10.html">Висновки</a>
+                    </div>
+                </li>
+            </ul>
+        </aside>
+        <section class="wrapper lab-content">
+            <h2>Завдання 10</h2>
+            <h4>Завдання</h4>
+            <img class="task-screenshot" src="../img/task-10/task.png" alt="task">
+
+            <h4>Код</h4>
+            <pre>
+const createButton = document.querySelector('[data-create]');
+const destroyButton = document.querySelector('[data-destroy]');
+const input = document.querySelector('#controls input');
+const boxesContainer = document.getElementById('boxes');
+
+let sizeBias = 0;
+const startSize = {
+    width: 2,
+    height: 2
+}
+
+const createBoxes = () => {
+    const value = input.value;
+    if (value.trim() === '') {
+        alert("Введіть кількість елементів")
+        return;
+    }
+
+    const amount = parseInt(value);
+    if (amount &lt; 1 || amount &gt; 100) {
+        alert("Кількість елементів має бути від 1 до 100")
+        return;
+    }
+
+    for (let i = 0; i &lt; amount; i++) {
+        const div = document.createElement('div');
+        div.classList.add("box");
+        div.style.width = `${startSize.width + sizeBias}em`;
+        div.style.height = `${startSize.height + sizeBias}em`;
+        div.style.backgroundColor = getRandomHexColor();
+        boxesContainer.appendChild(div);
+        sizeBias++;
+    }
+}
+
+const destroyBoxes = () => {
+    boxesContainer.innerHTML = '';
+    sizeBias = 0;
+}
+
+createButton.addEventListener("click", createBoxes);
+destroyButton.addEventListener("click", destroyBoxes);
+            </pre>
+
+            <h4>Результати</h4>
+            <div class="result-block">
+                <div id="controls">
+                    <input type="number" min="1" max="100" step="1" />
+                    <button class="task-button" type="button" data-create>Create</button>
+                    <button class="task-button" type="button" data-destroy>Destroy</button>
+                </div>         
+                <div id="boxes"></div>
+            </div>
+        </section>
+    </main>
+    <footer class="wrapper centered">
+        <p>Copyright @ 2025 Приходько Роман</p>
+    </footer>
+    <script src="../../js/loadLabList.js"></script>
+    <script src="../js/initData.js"></script>
+    <script src="../js/task-10.js"></script>
+    <script src="../js/random-color.js"></script>
+</body>
+</html>

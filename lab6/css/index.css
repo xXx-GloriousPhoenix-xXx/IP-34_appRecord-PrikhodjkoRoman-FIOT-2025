@@ -1,0 +1,24 @@
+.lab-content input {
+    width: 12em;
+    height: 2em;
+    padding: 0.25em 0.5em;
+    border: 0.15em solid var(--primary_color);
+    border-radius: 1em;
+    background-color: transparent;
+    outline: none;
+    cursor: pointer;
+    transition: 250ms;
+    color: var(--primary_color);
+}
+.lab-content input:focus,
+.lab-content input:hover {
+    background-color: var(--primary_color);
+    color: var(--secondary_color_3);
+}
+.lab-content label {
+    margin-left: 0.75em;
+}
+.lab-content .field {
+    display: flex;
+    flex-flow: column nowrap;
+}

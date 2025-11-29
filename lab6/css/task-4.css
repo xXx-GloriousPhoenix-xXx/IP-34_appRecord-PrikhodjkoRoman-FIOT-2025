@@ -1,0 +1,12 @@
+.control {
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 1em;
+}
+#resize-object {
+    display: flex;
+    aspect-ratio: 1;
+    border: 0.15em dashed var(--primary_color);
+    border-radius: 1em;
+    transition: 100ms;
+}
